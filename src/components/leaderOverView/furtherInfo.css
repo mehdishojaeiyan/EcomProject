@@ -1,0 +1,19 @@
+.further{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 20px auto;
+    
+    font-size: 0.8em;
+}
+.furtherBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #cacaca;
+    color:  #7e7e7e;
+    padding: 5px;
+}
+.br{
+    border-right: 0;
+}

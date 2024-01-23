@@ -1,0 +1,45 @@
+
+
+.container-fluid{
+    display: grid;
+    grid-template-columns:repeat(12,1fr) ;
+    margin-top: 20px;
+}
+.leadPerformace{
+    grid-column: 3/-1;
+
+}
+.profile{
+    grid-column: 1/3;
+}
+.leadHead{
+ 
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom:1px solid lightgray ;
+    box-shadow: 0px 2px 7px  lightgray;
+}
+.leadHead button{
+border-radius: 20px;
+border:1px solid lightgray ;
+box-shadow: 0px 2px 7px  lightgray;
+background-color: #363062;
+color: #f5f5f5;
+padding: 5px;
+font-size: 0.6em;
+margin-right: 20px;
+}
+.leadHead button:hover{
+    background-color: #F99417;
+}
+.performanceSection{
+    margin-top: 10px;
+ 
+}
+/* .performance{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    max-width: 100%;
+} */

@@ -1,0 +1,15 @@
+.leadCard{
+    margin: 20px;
+    width: 220px;
+    height: 230px;
+    background-color: aqua;
+}
+
+#cardImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.risk{
+    font-size: 10px;
+}
