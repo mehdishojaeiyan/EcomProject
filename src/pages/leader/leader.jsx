@@ -28,10 +28,10 @@ const Leader = ({ risk }) => {
             </button>
           </div>
           <section className="performanceSection">
-            <LeadNav />
             <div className="performance">
+            <LeadNav />
               <Routes>
-                <Route path="/overView" element={<OverView />}></Route>
+                <Route path="/leader/overView" element={<OverView />}></Route>
                 <Route path="/stats" element={<Stats />}></Route>
                 <Route path="/portfolio" element={<Portfolio />}></Route>
                 <Route path="/feed" element={<Feed />}></Route>

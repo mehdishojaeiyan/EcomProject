@@ -2,16 +2,18 @@ import './card.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import jonas from "../../assets/image/jonas.jpg"
-
+import avatar1 from '../../assets/image/avatar1.webp';
+import avatar2 from '../../assets/image/avatar2.jpg';
+import avatar3 from '../../assets/image/avater3.jpg';
+import avatar4 from '../../assets/image/avater4.webp';
 
 const Card = () => {
 
     const [users,setUsers] = useState([
-        {id:1, userName : 'Lightning-Signal',roi:'+99.2%',image:jonas},
-        {id:2, userName:'SecureFX-Trader-Cradle',roi:'+44.2%',image:jonas },
-        {id:3, userName:'SwissWay', roi:'+256.4%',image:jonas},
-        {id:4, userName:'investLong',roi:'+12.7%',image:jonas},]
+        {id:1, userName : 'Lightning-Signal',roi:'+99.2%',image:avatar1},
+        {id:2, userName:'SecureFX-Trader-Cradle',roi:'+44.2%',image:avatar2 },
+        {id:3, userName:'SwissWay', roi:'+256.4%',image:avatar3},
+        {id:4, userName:'investLong',roi:'+12.7%',image:avatar4},]
     )
 
     return ( <>

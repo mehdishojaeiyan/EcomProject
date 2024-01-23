@@ -1,8 +1,12 @@
-import LeaderCard from "../liderCard/leaderCard";
+
+import Slider from "../../components/slider/slider";
+import SectionCard from "../../components/sectionCard/sectionCard";
 
 const Leaders = () => {
     return ( <>
-    <LeaderCard/>
+    <Slider/>
+    <SectionCard/>
+    <Slider/>
     </> );
 }
  

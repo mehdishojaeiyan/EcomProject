@@ -1,7 +1,8 @@
 import Card from "../card/card";
 import CardAmount from '../cardAmount/cardAmount'; 
 import './sectionCard.css';
-import img1 from '../../assets/img/img1.webp';
+import img1 from "../../assets/image/img1.webp"
+
 
 const SectionCard = () => {
     return ( <>
@@ -10,7 +11,7 @@ const SectionCard = () => {
                 <Card/>
             </div>
             <div className="homeImg">
-                <img src={img1} alt=""/>
+                <img src={img1}  alt="ecommerce"/>
             </div>
            <div className="topCard">
                 <CardAmount/>

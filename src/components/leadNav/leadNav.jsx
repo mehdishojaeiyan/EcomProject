@@ -24,7 +24,7 @@ function LeadNav() {
   
 <ul className="nav nav-tabs">
   <li className="nav-item ">
-    <Link className="nav-link leadNav " aria-current="page" to="/overView">OverView</Link>
+    <Link className="nav-link leadNav " aria-current="page" to="/leader/overView">OverView</Link>
   </li>
   <li className="nav-item">
     <Link className="nav-link leadNav" to="/stats">State</Link>

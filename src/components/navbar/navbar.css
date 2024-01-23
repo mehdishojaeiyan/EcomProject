@@ -21,7 +21,8 @@
 
 .menu {
   background-color: #363062 !important;
-  display: grid;
+  display: flex;
+  justify-content: space-around;
   /* color: #F5F5F5 !important; */
 }
 .item-menu {

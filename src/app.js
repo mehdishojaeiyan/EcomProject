@@ -3,12 +3,18 @@ import React, { Component } from "react";
 import { Routes, Route } from "react-router-dom";
 import Leader from "./pages/leader/leader";
 import LeaderContext from "./context/leader";
-import Navbar from "./components/navbar/navbar";
+import NavBar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
+import SectionCard from "./components/sectionCard/sectionCard";
+import "animate.css";
+import OverView from "./components/leaderOverView/overView";
+import Leaders from "./pages/leaders/leaders";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./pages/home/home";
 
 class App extends Component {
   state = {
-    leader: {
+    leader: [{
       id: 1,
       leadName: "jonas",
       risk: 4,
@@ -30,31 +36,32 @@ class App extends Component {
       ethAVGprofit: "31.02%",
       ethAVGloss: "14.02%",
       ethProfitable: "78.34%",
-      ethChart:78.34,
+      ethChart: 78.34,
       ltcAVGprofit: "19.50%",
       ltcAVGloss: "32.70%",
       ltcProfitable: "17.80%",
-      ltcChart:17.80,
+      ltcChart: 17.8,
       xrpAVGprofit: "13.08%",
       xrpAVGloss: "14.60%",
       xrpProfitable: "31.40%",
-      xrpChart:31.40,
+      xrpChart: 31.4,
       winning: "(361)52.2%",
       recommendedMinInvestment: "1000$",
       maxDrowDown: "(2743$)21%",
       avgTradeWeek: 67,
-    },
+    }],
   };
   render() {
     return (
       <>
         <LeaderContext.Provider value={{ leader: this.state.leader }}>
-          <Navbar/>
+          <NavBar />
+
           <Routes>
-                <Route path="/Leaders" element={<Leader />}></Route>
-                
-              </Routes>
-              <Footer/>
+            <Route path="/leaders" element={<Leaders />}></Route>
+            <Route path="/" element={<Home />}></Route>
+          </Routes>
+          <Footer />
         </LeaderContext.Provider>
       </>
     );
