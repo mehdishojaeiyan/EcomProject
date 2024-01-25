@@ -46,7 +46,7 @@ export default function Slider() {
         {
           leaderContext.leader.map((leader, index)=>{
             return(<SwiperSlide>
-              <PersonalCard key={index} name={leader.name} img={leader.avatar} roi={leader.ROI} copiers={leader.copiers} id={leader.id}/>
+              <PersonalCard key={index} risk={leader.risk} name={leader.name} img={leader.avatar} roi={leader.ROI} copiers={leader.copiers} id={leader.id}/>
               </SwiperSlide> )
           })
         }
