@@ -4,8 +4,8 @@ import {faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import avatar1 from '../../assets/image/avatar1.webp';
 import avatar2 from '../../assets/image/avatar2.jpg';
-import avatar3 from '../../assets/image/avater3.jpg';
-import avatar4 from '../../assets/image/avater4.webp';
+import avatar3 from '../../assets/image/avatar3.jpg';
+import avatar4 from '../../assets/image/avatar4.webp';
 
 const Card = () => {
 

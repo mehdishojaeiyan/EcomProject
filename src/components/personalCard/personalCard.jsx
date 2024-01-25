@@ -3,24 +3,30 @@ import './personalCard.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faStar } from '@fortawesome/free-regular-svg-icons';
 import avatar1 from '../../assets/image/avatar1.webp';
+import { useContext } from 'react';
+import LeaderContext from "../../context/leader";
 
-const PersonalCard = () => {
+
+
+
+const PersonalCard = ({name , img , roi , copiers , id}) => {
+    const leaderContext = useContext(LeaderContext)
     return ( <>
-        <div className='generalPart'>
+        <div className='generalPart mb-3'>
             <div className='firstLine'>
-                <div><p>Risk</p></div>
-                <div><img className='personImg' src={avatar1}/></div>
+                <div><p className='risk'>Risk</p></div>
+                <div><Link to={`/leader/${id}`}><img className='personImg' src={img}/></Link></div>
                 <div><a href='#' id='star' ><FontAwesomeIcon icon={faStar} /></a></div>
 
             </div>
             <div className='secondLine'>
-                <p>AlpineFX</p>
+               <p ><Link to={`/leader/${id}`} className='namePersonalCard'>{name}</Link></p> 
             </div>
             <div className='thirdLine'>
-                <p>COPIERS :</p>
+                <span id='cardCopiers'>COPIERS: {copiers}</span>
             </div>
-            <div className='fourthLine'>
-                <button>+8.27%</button>
+            <div className='roi'>
+                <p>{roi}</p>
             </div>
             <div></div>
         </div>

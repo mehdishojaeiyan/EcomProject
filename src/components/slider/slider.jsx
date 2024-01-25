@@ -12,7 +12,12 @@ import PersonalCard from '../personalCard/personalCard';
 // import required modules
 import { Pagination } from 'swiper/modules';
 
+import LeaderContext from '../../context/leader';
+import { useContext } from 'react';
+
+
 export default function Slider() {
+  const leaderContext=useContext(LeaderContext)
   return (
     <>
       <Swiper
@@ -38,15 +43,14 @@ export default function Slider() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
-        <SwiperSlide><PersonalCard/></SwiperSlide>
+        {
+          leaderContext.leader.map((leader, index)=>{
+            return(<SwiperSlide>
+              <PersonalCard key={index} name={leader.name} img={leader.avatar} roi={leader.ROI} copiers={leader.copiers} id={leader.id}/>
+              </SwiperSlide> )
+          })
+        }
+     
       </Swiper>
     </>
   );

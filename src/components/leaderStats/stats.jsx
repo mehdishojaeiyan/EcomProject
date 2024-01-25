@@ -16,14 +16,21 @@ import LTC from "../../assets/image/LTCUSD.svg";
 import XRP from "../../assets/image/XRPUSD.svg";
 import { Chart as ChartJS, ArcElement,Tooltip,  Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import { useParams } from "react-router-dom";
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Stats = () => {
+  const {id} = useParams();
   const leaderContext = useContext(LeaderContext);
-  const eth = leaderContext.leader.ethChart;
-  const ltc = leaderContext.leader.ltcChart;
-  const xrp = leaderContext.leader.xrpChart;
+  const currentUser = leaderContext.leader.find((user) => user.id === parseInt(id));
+  if (!currentUser) {
+    return <p>کاربر پیدا نشد!</p>;
+  }
+  const eth = currentUser.ethChart;
+  const ltc = currentUser.ltcChart;
+  const xrp = currentUser.xrpChart;
 
   const dataXRP = {
     datasets: [
@@ -59,19 +66,19 @@ const Stats = () => {
           <div className="additionalInfo ">
             <div className="additional mt-2">
               <FontAwesomeIcon className="font mb-2" icon={faCalendarWeek} />
-              <span>{leaderContext.leader.tradePerWeek}</span>
+              <span>{currentUser.tradePerWeek}</span>
               <p>Trades Per Week</p>
             </div>
 
             <div className="additional mt-2">
               <FontAwesomeIcon className="font mb-2" icon={faStopwatch} />
-              <span>{leaderContext.leader.AVGHoldingTime}</span>
+              <span>{currentUser.AVGHoldingTime}</span>
               <p>AVG. Holding Time</p>
             </div>
 
             <div className="additional mt-2">
               <FontAwesomeIcon className="font mb-2" icon={faUserCheck} />
-              <span>{leaderContext.leader.ActiveSince}</span>
+              <span>{currentUser.ActiveSince}</span>
               <p>Active Since</p>
             </div>
 
@@ -80,7 +87,7 @@ const Stats = () => {
                 className="font mb-2"
                 icon={faArrowUpWideShort}
               />
-              <span>{leaderContext.leader.profitableWeeks}</span>
+              <span>{currentUser.profitableWeeks}</span>
               <p>Profitable Weeks</p>
             </div>
           </div>
@@ -88,11 +95,11 @@ const Stats = () => {
         <div className="sideBox">
           <div className="chartDescription">
             <span>Realised Profit</span>
-            <p>{leaderContext.leader.realisedProfit}</p>
+            <p>{currentUser.realisedProfit}</p>
             <span>Profitable Trades</span>
-            <p>{leaderContext.leader.profitableTrades}</p>
+            <p>{currentUser.profitableTrades}</p>
             <span>Total Trades</span>
-            <p>{leaderContext.leader.totalTrades}</p>
+            <p>{currentUser.totalTrades}</p>
           </div>
 
           <div className="frequentlyTraded mt-4">
@@ -107,7 +114,7 @@ const Stats = () => {
                 <span>
                   AVG.Profit{" "}
                   <span style={{ color: "#16FF00" }}>
-                    {leaderContext.leader.xrpAVGprofit}{" "}
+                    {currentUser.xrpAVGprofit}{" "}
                     <FontAwesomeIcon icon={faArrowUp} />
                   </span>
                 </span>
@@ -115,7 +122,7 @@ const Stats = () => {
                   AVG.Loss &nbsp;{" "}
                   <span style={{ color: "red" }}>
                     {" "}
-                    {leaderContext.leader.xrpAVGloss}{" "}
+                    {currentUser.xrpAVGloss}{" "}
                     <FontAwesomeIcon icon={faArrowDown} />
                   </span>
                 </span>
@@ -126,7 +133,7 @@ const Stats = () => {
                 </div>
                 <div className="frequPercentProfitable mt-1">
                   <span style={{ color: "black" }}>
-                    {leaderContext.leader.xrpProfitable}
+                    {currentUser.xrpProfitable}
                   </span>
                   <span>PROFITABLE</span>
                 </div>
@@ -142,7 +149,7 @@ const Stats = () => {
                 <span>
                   AVG.Profit{" "}
                   <span style={{ color: "#16FF00" }}>
-                    {leaderContext.leader.ltcAVGprofit}{" "}
+                    {currentUser.ltcAVGprofit}{" "}
                     <FontAwesomeIcon icon={faArrowUp} />
                   </span>
                 </span>
@@ -150,7 +157,7 @@ const Stats = () => {
                   AVG.Loss &nbsp;{" "}
                   <span style={{ color: "red" }}>
                     {" "}
-                    {leaderContext.leader.ltcAVGloss}{" "}
+                    {currentUser.ltcAVGloss}{" "}
                     <FontAwesomeIcon icon={faArrowDown} />
                   </span>
                 </span>
@@ -161,7 +168,7 @@ const Stats = () => {
                 </div>
                 <div className="frequPercentProfitable mt-1">
                   <span style={{ color: "black" }}>
-                    {leaderContext.leader.ltcProfitable}
+                    {currentUser.ltcProfitable}
                   </span>
                   <span>PROFITABLE</span>
                 </div>
@@ -176,7 +183,7 @@ const Stats = () => {
                 <span>
                   AVG.Profit{" "}
                   <span style={{ color: "#16FF00" }}>
-                    {leaderContext.leader.ethAVGprofit}{" "}
+                    {currentUser.ethAVGprofit}{" "}
                     <FontAwesomeIcon icon={faArrowUp} />
                   </span>
                 </span>
@@ -184,7 +191,7 @@ const Stats = () => {
                   AVG.Loss &nbsp;{" "}
                   <span style={{ color: "red" }}>
                     {" "}
-                    {leaderContext.leader.ethAVGloss}{" "}
+                    {currentUser.ethAVGloss}{" "}
                     <FontAwesomeIcon icon={faArrowDown} />
                   </span>
                 </span>
@@ -195,7 +202,7 @@ const Stats = () => {
                 </div>
                 <div className="frequPercentProfitable mt-1">
                   <span style={{ color: "black" }}>
-                    {leaderContext.leader.ethProfitable}
+                    {currentUser.ethProfitable}
                   </span>
                   <span>PROFITABLE</span>
                 </div>

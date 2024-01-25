@@ -1,23 +1,24 @@
 import OverViewChart from "./chart";
 import FurtherInfo from "./furtherInfo";
 import "./overView.css";
-import { useState } from "react";
 import BTC from "../../assets/image/BTCUSD.svg";
 import BCH from "../../assets/image/BCHUSD.svg";
 import ETH from "../../assets/image/ETHUSD.svg";
 import LTC from "../../assets/image/LTCUSD.svg";
 import XRP from "../../assets/image/XRPUSD.svg";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import LeaderContext from "../../context/leader";
 
 const OverView = () => {
-  const [state, setState] = useState({
-    btc: "2.03%",
-    bch: "1.80%",
-    eth: "0.05%",
-    ltc: "0.35%",
-    xrp: "0.60%",
-    profitableWeek: "76.3%",
-    returnYTD: "91.5%",
-  });
+  const {id} = useParams();
+  const leaderContext = useContext(LeaderContext);
+  const currentUser = leaderContext.leader.find((user) => user.id === parseInt(id));
+  if (!currentUser) {
+    return <p>کاربر پیدا نشد!</p>;
+  }
+
+
   return (
     <>
       <div className="viwePerform">
@@ -26,7 +27,7 @@ const OverView = () => {
             <OverViewChart />
           </div>
           <div className="mt-4">
-            <FurtherInfo />
+            <FurtherInfo  />
           </div>
         </div>
 
@@ -36,37 +37,37 @@ const OverView = () => {
             <div className="topTrad">
               <img src={BTC} alt="" />
               <p>BTC</p>
-              <span>{state.btc}</span>
+              <span>{currentUser.btc}</span>
             </div>
             <div className="topTrad">
               <img src={BCH} alt="" />
               <p>BCH</p>
-              <span>{state.bch}</span>
+              <span>{currentUser.bch}</span>
             </div>
             <div className="topTrad">
               <img src={XRP} alt="" />
               <p>XRP</p>
-              <span>{state.xrp}</span>
+              <span>{currentUser.xrp}</span>
             </div>
             <div className="topTrad">
               <img src={LTC} alt="" />
               <p>LTC</p>
-              <span>{state.ltc}</span>
+              <span>{currentUser.ltc}</span>
             </div>
             <div className="topTrad">
               <img src={ETH} alt="" />
               <p>ETH</p>
-              <span>{state.eth}</span>
+              <span>{currentUser.eth}</span>
             </div>
           </div>
 
           <div className="info mt-3 p-2">
             <p>
-              Return YTD :<span>{state.returnYTD}</span>
+              Return YTD :<span>{currentUser.returnYTD}</span>
             </p>
 
             <p>
-              Profitable Weeks :<span>{state.profitableWeek}</span>
+              Profitable Weeks :<span>{currentUser.profitableWeek}</span>
             </p>
           </div>
         </div>

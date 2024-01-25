@@ -8,7 +8,7 @@ function Description() {
 		<div className="description">
 			<h6 className="geeks">description</h6>
 			<h6>
-				React example to Create Read More Component
+				Leader description
 			</h6>
 			<Content />
 		</div>
