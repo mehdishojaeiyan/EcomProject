@@ -9,6 +9,8 @@ import SectionCard from "./components/sectionCard/sectionCard";
 import "animate.css";
 import OverView from "./components/leaderOverView/overView";
 import Leaders from "./pages/leaders/leaders";
+import WatchList from "./pages/watchList/watchList";
+import TopPerforming from "./pages/topPerforming/topPerforming";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/home/home";
 import avatar1 from "./assets/image/avatar1.webp";
@@ -35,7 +37,7 @@ class App extends Component {
         id: 1,
         name: "Jonas Lee",
         avatar: avatar1,
-        risk: 4,
+        risk: 9,
         winRate: "75.12%",
         ROI: "170.5%",
         followers: 287,
@@ -701,6 +703,8 @@ class App extends Component {
 
           <Routes>
             <Route path="/leader/:id" element={<Leader />}></Route>
+            <Route path="/watchList/:id" element={<WatchList />}></Route>
+            <Route path="/topperforming" element={<TopPerforming />}></Route>
             <Route path="/leaders" element={<Leaders />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>

@@ -1,114 +1,62 @@
-import "./leader.css";
-import Profile from "../../components/profile/profile";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useRef } from 'react';
 
-import { useContext, useState } from "react";
-import LeaderContext from "../../context/leader";
-import { Routes, Route } from "react-router-dom";
-import OverView from "../../components/leaderOverView/overView";
-import Stats from "../../components/leaderStats/stats";
-import Portfolio from "../../components/leaderPrtfolio/Prtfolio";
-import Feed from "../../components/leaderFeed/feed";
-import { useParams } from "react-router-dom";
-import Progress from "../../components/progressBar/progresBar";
-import {faAward , faWandMagicSparkles ,faStar } from '@fortawesome/free-solid-svg-icons';
-import Description from "../../components/readMore/readMore";
-import { Link,NavLink } from 'react-router-dom';
+const ChartCard = () => {
+  const canvasRef = useRef(null);
 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
 
-const Leader = () => {
-  const leaderContext = useContext(LeaderContext);
-  
-  const [selectedComponent, setSelectedComponent] = useState(null);
-  const handleLiClick = (componentName) => {
-    setSelectedComponent(componentName);
-  };
+    // تعیین اندازه canvas
+    canvas.width = 210;
+    canvas.height = 130;
 
+    // تابع برای ایجاد مقادیر تصادفی
+    const generateRandomData = (numPoints) => {
+      const data = [];
+      for (let i = 0; i < numPoints; i++) {
+        data.push(Math.random() * 100); // مقادیر تصادفی بین 0 و 100
+      }
+      return data;
+    };
 
-  const {id} = useParams();
-  
-  const currentUser = leaderContext.leader.find((user) => user.id === parseInt(id));
-  if (!currentUser) {
-    return <p>کاربر پیدا نشد!</p>;
-  }
-  return (
-    <>
-      <div className="container-fluid p-2">
-        <div className="profile">
-        <div className="profile1">
-            
-           
-            <img className='proimg' src={currentUser.avatar} alt="" />
-             <p className='name h6'>{currentUser.name} </p>
-             <div className="symbol">
-             <FontAwesomeIcon icon={faAward} />
-             <FontAwesomeIcon icon={faWandMagicSparkles} />
-            </div>
-             
-             <div className="risk">
-                 <h5>{`Risk ${currentUser.risk}`}</h5>
-                
-             <Progress />
-             </div>
-             
-             <div className="proInfo">
-                 <div className="proUl">
-                     <li className="proLi">
-                         <h6 className='mb-0'>{currentUser.winRate}</h6>
-                         <span>Win Rate</span>
-                     </li>
-                     <li className="proLi">
-                     <h6 className='mb-0'>{currentUser.ROI}</h6>
-                         <span>ROI</span>
-                     </li>
-                     <li className="proLi">
-                     <h6 className='mb-0'>{currentUser.followers}</h6>
-                         <span>Fllowers</span>
-                     </li>
-                     <li className="proLi">
-                     <h6 className='mb-0'>{currentUser.copiers}</h6>
-                         <span>Copiers</span>
-                     </li>
-                 </div>
-                 <div className='description'>
-                     <Description/>
-                 </div>
-             </div>
-         </div>
-        </div>
-        <div className="leadPerformace">
-          <div className="leadHead">
-            <button>
-              <FontAwesomeIcon icon={faStar} />
-              <span>Add To Watch List</span>
-            </button>
-          </div>
+    // ایجاد مقادیر تصادفی
+    const randomData = generateRandomData(20);
 
-          <section className="performanceSection">
-            <div className="performance">
-            <div className="leadNav">
-            <div>
-      <ul>
-        <li onClick={() => handleLiClick('overView')}>overView </li>
-        <li onClick={() => handleLiClick('Stats')}>Stats</li>
-        {/* افزودن li های دیگر به تعداد کامپوننت‌های موردنظر */}
-      </ul>
-      <div className="compo">
-        {/* نمایش کامپوننت انتخاب شده */}
-        {selectedComponent === 'overView' && <overView />}
-        {selectedComponent === 'Stats' && <Stats />}
-        {/* افزودن قسمت‌های دیگر بر اساس کامپوننت‌های موردنظر */}
-      </div>
-    </div>
-            </div>
-            <div className="compo"></div>
-         
-            </div>
-          </section>
-        </div>
-      </div>
-    </>
-  );
+    // تابع برای رسم نمودار خطی
+    const drawChartCard = (data) => {
+      const pointWidth = canvas.width / data.length;
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      // تنظیم رنگ خط نمودار
+      context.strokeStyle = '#4d4c7d';
+
+      context.beginPath();
+      context.moveTo(0, canvas.height - (data[0] / 100) * canvas.height);
+
+      data.forEach((value, index) => {
+        const x = index * pointWidth;
+        const y = canvas.height - (value / 100) * canvas.height;
+        context.lineTo(x, y);
+        context.stroke();
+
+        // تنظیم رنگ ناحیه زیر نمودار با رنگ خط نمودار
+        // const gradient = context.createLinearGradient(canvas.height,0, y, 0 );
+        const gradient = context.createLinearGradient(0,0,0 ,y);
+        gradient.addColorStop(0, 'rgba(255, 167, 35, 0.1)');
+        gradient.addColorStop(1, 'rgba(255, 167, 35, 0)');
+        context.fillStyle = gradient;
+        context.fill();
+      });
+      context.closePath();
+    };
+
+    // رسم نمودار خطی با استفاده از مقادیر تصادفی
+    drawChartCard(randomData);
+  }, []);
+
+  return <canvas ref={canvasRef} />;
 };
 
-export default Leader;
+export default ChartCard;

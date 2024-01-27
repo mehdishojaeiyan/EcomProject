@@ -17,7 +17,7 @@ const PersonalCard = ({name , img , roi , copiers , id , risk}) => {
             <div className='firstLine'>
                 <div><p className='risk'>Risk{risk}</p></div>
                 <div><Link to={`/leader/${id}`}><img className='personImg' src={img}/></Link></div>
-                <div><a href='#' id='star' ><FontAwesomeIcon icon={faStar} /></a></div>
+                <div><Link to={`/watchList/${id}`} id='star' ><FontAwesomeIcon icon={faStar} /></Link></div>
 
             </div>
             <div className='secondLine'>

@@ -1,34 +1,29 @@
 import './cardAmount.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
-import avatar5 from '../../assets/image/avatar5.webp';
-import avatar9 from '../../assets/image/avatar9.jpg';
-import avatar7 from '../../assets/image/avatar7.jpg';
-import avatar8 from '../../assets/image/avatar8.jpg';
+import { useContext} from 'react';
+import LeaderContext from '../../context/leader';
+import { Link } from 'react-router-dom';
+
+
 
 const CardAmount = () => {
-
-    const [users,setUsers] = useState([
-        {id:1, userName : 'ReVeR273',roi:'+147.9%',image:avatar5},
-        {id:2, userName:'Fire Gc',roi:'+63.8%',image:avatar9 },
-        {id:3, userName:'AlpineFx', roi:'+56.0%',image:avatar7},
-        {id:4, userName:'Deepsecret',roi:'+46.4%',image:avatar8},]
-    )
-
+    const leaderContext=useContext(LeaderContext)
+    const leaders = leaderContext.leader.slice(10,14)
     return ( <>
         <div className='card'>
                 <div className='title'>
                     <span style={{fontSize:'large'}}>Amount Copying</span>
-                    <button className='iconBtn'><FontAwesomeIcon id="iconCard" icon={faArrowRight} /></button>
+                    <Link to={`/topperforming`}> 
+                      <button className='iconBtn'><FontAwesomeIcon id="iconCard" icon={faArrowRight} /></button> </Link>
                 </div>
-                {console.log(users)}
-                {users.map(user=>{
+               
+                {leaders.map(user=>{
                     return (
                         <div className='rowUser'>
-                            <img className='avatar' src={user.image} alt='Avatar'/>
-                            <span ><a className='userTop'  href='#'>{user.userName}</a></span>
-                            <button className='sizeBtn'>{user.roi}</button>
+                           <a href={`/leader/${user.id}`}> <img className='avatar' src={user.avatar} alt='Avatar'/></a>
+                            <span ><a className='userTop'  href={`/leader/${user.id}`}>{user.name}</a></span>
+                            <button className='sizeBtn'>{user.ROI}</button>
                         </div>
                     )
                 })}

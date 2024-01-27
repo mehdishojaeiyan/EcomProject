@@ -25,9 +25,9 @@ const ReadMore = ({ children }) => {
 
 const Content = () => {
 	return (
-		<div className="container"  >
+		<div className="container justify"  >
 			{/* <h2> */}
-				<ReadMore>
+				<ReadMore >
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					 Odit impedit ipsam, molestiae reiciendis voluptas, 
 					 animi et laborum reprehenderit est harum quod ex eveniet,

@@ -77,9 +77,9 @@ const Leader = () => {
         </div>
         <div className="leadPerformace">
           <div className="leadHead">
-            <button>
+            <button><Link to={`/watchList/${id}`}  >
               <FontAwesomeIcon icon={faStar} />
-              <span>Add To Watch List</span>
+              <span>Add To Watch List</span></Link>
             </button>
           </div>
           <section className="performanceSection">
@@ -97,7 +97,7 @@ const Leader = () => {
             {selectedComponent === 'OverView' && <OverView />}
             {selectedComponent === 'Stats' && <Stats />}
             {selectedComponent === 'Portfolio' && <Portfolio />}
-            {selectedComponent === 'Feed' && <Feed />}
+            {selectedComponent === 'Feed' && <Feed name={currentUser.name} />}
           
             </div>
           </section>

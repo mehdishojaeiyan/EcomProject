@@ -108,10 +108,10 @@ const Portfolio = () => {
 <TableCell>{row.close}</TableCell>
 <TableCell>{row.high}</TableCell>
 <TableCell>{row.low}</TableCell>
-<TableCell style={{ color: row.profit >= 0 ? 'green' : 'red' }}>
-  {`$${Math.abs(row.profit)} `}<div>{row.pipsText} pips</div>
+<TableCell style={{ color: row.profit >= 0 ? ' #2ce31b' : 'red' }}>
+  {`$${row.profit} `}<div>{row.pipsText} pips</div>
 </TableCell>
-<TableCell style={{ color: row.total >= 0 ? 'green' : 'red' }}>
+<TableCell >
   {`$${row.total} `}<div>{row.pipsText} pips</div>
 </TableCell>
 

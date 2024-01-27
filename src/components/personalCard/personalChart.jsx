@@ -11,17 +11,26 @@ const ChartCard = () => {
     canvas.width = 210;
     canvas.height = 130;
 
-    // تابع برای ایجاد مقادیر تصادفی
-    const generateRandomData = (numPoints) => {
+    // تابع برای ایجاد مقادیر با فراز و نشیب
+    const generateDataWithFluctuations = (numPoints) => {
       const data = [];
+      let currentValue = 60; // مقدار ابتدایی
+      const maxFluctuation = 20; // حداکثر تغییرات
       for (let i = 0; i < numPoints; i++) {
-        data.push(Math.random() * 100); // مقادیر تصادفی بین 0 و 100
+        // افزودن تغییرات تصادفی به مقدار فعلی
+        const fluctuation = (Math.random() - 0.5) * maxFluctuation;
+        currentValue += fluctuation;
+
+        // محدود کردن مقادیر بین 0 و 100
+        currentValue = Math.max(0, Math.min(100, currentValue));
+
+        data.push(currentValue);
       }
       return data;
     };
 
-    // ایجاد مقادیر تصادفی
-    const randomData = generateRandomData(20);
+    // ایجاد مقادیر با فراز و نشیب
+    const fluctuatingData = generateDataWithFluctuations(40);
 
     // تابع برای رسم نمودار خطی
     const drawChartCard = (data) => {
@@ -30,7 +39,7 @@ const ChartCard = () => {
       context.clearRect(0, 0, canvas.width, canvas.height);
 
       // تنظیم رنگ خط نمودار
-      context.strokeStyle = '#4d4c7d';
+      context.strokeStyle = '#363062';
 
       context.beginPath();
       context.moveTo(0, canvas.height - (data[0] / 100) * canvas.height);
@@ -39,20 +48,33 @@ const ChartCard = () => {
         const x = index * pointWidth;
         const y = canvas.height - (value / 100) * canvas.height;
         context.lineTo(x, y);
-        context.stroke();
-
-        // تنظیم رنگ ناحیه زیر نمودار با رنگ خط نمودار
-        const gradient = context.createLinearGradient(canvas.height,0, y, 0 );
-        gradient.addColorStop(0, 'rgba(0, 0, 128, 0.1)');
-        gradient.addColorStop(1, 'rgba(0, 0, 128, 0)');
-        context.fillStyle = gradient;
-        context.fill();
       });
+
+      // اتمام خط نمودار
+      context.stroke();
       context.closePath();
+
+      // تنظیم رنگ ناحیه زیر نمودار با رنگ خط نمودار
+      const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, 'rgba(255, 167, 35, 1)');
+      gradient.addColorStop(1, 'rgba(255, 167, 35, 0)');
+      context.fillStyle = gradient;
+
+      // رسم مستطیل به عنوان ناحیه زیر نمودار
+      context.beginPath();
+      context.lineTo(0, canvas.height);
+      data.forEach((value, index) => {
+        const x = index * pointWidth;
+        const y = canvas.height - (value / 100) * canvas.height;
+        context.lineTo(x, y);
+      });
+      context.lineTo(canvas.width, canvas.height);
+      context.closePath();
+      context.fill();
     };
 
-    // رسم نمودار خطی با استفاده از مقادیر تصادفی
-    drawChartCard(randomData);
+    // رسم نمودار خطی با استفاده از مقادیر با فراز و نشیب
+    drawChartCard(fluctuatingData);
   }, []);
 
   return <canvas ref={canvasRef} />;
