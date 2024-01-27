@@ -7,7 +7,8 @@ import { useParams } from 'react-router-dom';
 
 
 
-const WatchList = () => {
+const WatchList = () => {//////
+    
     const leaderContext = useContext(LeaderContext);
     const {id} = useParams();
   
@@ -16,9 +17,9 @@ const WatchList = () => {
       return <p>کاربر پیدا نشد!</p>;
     }
     return ( <>
-    <h2>Watch List</h2>
-    
-    <div className='generalPart mb-3'>
+    <h2 className='p-4'>Watch List</h2>
+    <div className="watcCard p-4">
+    <div className='generalPart mb-3 '>
             <div className='firstLine'>
                 <div><p className='risk'>Risk{currentUser.risk}</p></div>
                 <div><Link to={`/leader/${id}`}><img className='personImg' src={currentUser.avatar}/></Link></div>
@@ -38,7 +39,7 @@ const WatchList = () => {
                 <ChartCard/>
             </div>
         </div>
-    
+        </div>
     </> );
 }
  

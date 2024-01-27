@@ -10,13 +10,13 @@ import './topPerforming.css'
 
 const TopPerforming = () => {
     const leaderContext = useContext(LeaderContext);
-    return ( <><h2>Top Performing</h2>
-  <div className="topLeader">
+    return ( <><h2 className="p-4">Top Performing</h2>
+  <div className="topLeader p-4">
     {
           leaderContext.leader.map((leader, index)=>{
-            return(
+            return(<div className="topCard p-3">
             <PersonalCard key={index} risk={leader.risk} name={leader.name} img={leader.avatar} roi={leader.ROI} copiers={leader.copiers} id={leader.id}/>
-              )
+            </div>  )
           })
         }</div> 
     </> );

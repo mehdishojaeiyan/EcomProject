@@ -1,10 +1,11 @@
+
 import "./leader.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useContext, useState } from "react";
 import LeaderContext from "../../context/leader";
-
+import { useEffect } from "react";
 import OverView from "../../components/leaderOverView/overView";
 import Stats from "../../components/leaderStats/stats";
 import Portfolio from "../../components/leaderPrtfolio/Prtfolio";
@@ -30,6 +31,8 @@ const Leader = () => {
   if (!currentUser) {
     return <p>کاربر پیدا نشد!</p>;
   }
+
+
   return (
     <>
       <div className="container-fluid p-2">
@@ -77,7 +80,7 @@ const Leader = () => {
         </div>
         <div className="leadPerformace">
           <div className="leadHead">
-            <button><Link to={`/watchList/${id}`}  >
+            <button><Link to={`/watchList/${id}`} >
               <FontAwesomeIcon icon={faStar} />
               <span>Add To Watch List</span></Link>
             </button>

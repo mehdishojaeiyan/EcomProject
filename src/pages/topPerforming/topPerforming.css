@@ -1,5 +1,7 @@
 .topLeader{
-    display: flex;
-   
+    display: flex; 
     flex-wrap: wrap;
+}
+.topCard{
+    
 }

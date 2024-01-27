@@ -1,62 +1,95 @@
-import React, { useEffect, useRef } from 'react';
+import './watchList.css'
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import LeaderContext from '../../context/leader';
+import ChartCard from '../../components/personalCard/personalChart';
+import { useParams } from 'react-router-dom';
 
-const ChartCard = () => {
-  const canvasRef = useRef(null);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
 
-    // تعیین اندازه canvas
-    canvas.width = 210;
-    canvas.height = 130;
+const WatchList = () => {//////
+    
+    const leaderContext = useContext(LeaderContext);
+    const {id} = useParams();
+  
+    const currentUser = leaderContext.leader.find((user) => user.id === parseInt(id));
+    if (!currentUser) {
+      return <p>کاربر پیدا نشد!</p>;
+    }
+    return ( <>
+    <h2 className='p-4'>Watch List</h2>
+    <div className="watcCard p-4">
+    <div className='generalPart mb-3 '>
+            <div className='firstLine'>
+                <div><p className='risk'>Risk{currentUser.risk}</p></div>
+                <div><Link to={`/leader/${id}`}><img className='personImg' src={currentUser.avatar}/></Link></div>
+                <div><button>-</button></div>
 
-    // تابع برای ایجاد مقادیر تصادفی
-    const generateRandomData = (numPoints) => {
-      const data = [];
-      for (let i = 0; i < numPoints; i++) {
-        data.push(Math.random() * 100); // مقادیر تصادفی بین 0 و 100
-      }
-      return data;
-    };
+            </div>
+            <div className='secondLine'>
+               <span ><Link to={`/leader/${id}`} className='namePersonalCard'>{currentUser.name}</Link></span> 
+            </div>
+            <div className='thirdLine'>
+                <span id='cardCopiers'>COPIERS: {currentUser.copiers}</span>
+            </div>
+            <div className='roi'>
+                <p title='ROI'>{currentUser.ROI}</p>
+            </div>
+            <div className='chartCard'>
+                <ChartCard/>
+            </div>
+        </div>
+        </div>
+    </> );
+}
+ 
+export default WatchList;
 
-    // ایجاد مقادیر تصادفی
-    const randomData = generateRandomData(20);
 
-    // تابع برای رسم نمودار خطی
-    const drawChartCard = (data) => {
-      const pointWidth = canvas.width / data.length;
 
-      context.clearRect(0, 0, canvas.width, canvas.height);
 
-      // تنظیم رنگ خط نمودار
-      context.strokeStyle = '#4d4c7d';
 
-      context.beginPath();
-      context.moveTo(0, canvas.height - (data[0] / 100) * canvas.height);
 
-      data.forEach((value, index) => {
-        const x = index * pointWidth;
-        const y = canvas.height - (value / 100) * canvas.height;
-        context.lineTo(x, y);
-        context.stroke();
 
-        // تنظیم رنگ ناحیه زیر نمودار با رنگ خط نمودار
-        // const gradient = context.createLinearGradient(canvas.height,0, y, 0 );
-        const gradient = context.createLinearGradient(0,0,0 ,y);
-        gradient.addColorStop(0, 'rgba(255, 167, 35, 0.1)');
-        gradient.addColorStop(1, 'rgba(255, 167, 35, 0)');
-        context.fillStyle = gradient;
-        context.fill();
-      });
-      context.closePath();
-    };
+import { Link } from 'react-router-dom';
+import './personalCard.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faStar } from '@fortawesome/free-regular-svg-icons';
+import avatar1 from '../../assets/image/avatar1.webp';
+import { useContext } from 'react';
+import LeaderContext from "../../context/leader";
+import ChartCard from './personalChart';
 
-    // رسم نمودار خطی با استفاده از مقادیر تصادفی
-    drawChartCard(randomData);
-  }, []);
 
-  return <canvas ref={canvasRef} />;
-};
 
-export default ChartCard;
+
+const PersonalCard = ({name , img , roi , copiers , id , risk}) => {
+    const leaderContext = useContext(LeaderContext)
+    return ( <>
+        <div className='generalPart mb-3'>
+            <div className='firstLine'>
+                <div><p className='risk'>Risk{risk}</p></div>
+                <div><Link to={`/leader/${id}`}><img className='personImg' src={img}/></Link></div>
+                <div><Link to={`/watchList/${id}`} id='star' ><FontAwesomeIcon icon={faStar} /></Link></div>
+
+            </div>
+            <div className='secondLine'>
+               <span ><Link to={`/leader/${id}`} className='namePersonalCard'>{name}</Link></span> 
+            </div>
+            <div className='thirdLine'>
+                <span id='cardCopiers'>COPIERS: {copiers}</span>
+            </div>
+            <div className='roi'>
+                <p title='ROI'>{roi}</p>
+            </div>
+            <div className='chartCard'>
+                <ChartCard/>
+            </div>
+        </div>
+    </> );
+}
+ 
+export default PersonalCard;
+
+
+

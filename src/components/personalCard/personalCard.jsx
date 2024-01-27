@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import './personalCard.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,3 +38,6 @@ const PersonalCard = ({name , img , roi , copiers , id , risk}) => {
 }
  
 export default PersonalCard;
+
+
+
