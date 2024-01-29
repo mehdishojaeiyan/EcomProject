@@ -3,6 +3,9 @@
     display: grid;
     grid-template-columns: repeat(12,1fr);
 max-width: 100%;
+background-color: white;
+border: 1px solid lightgray;
+border-radius: 5px;
 }
 
 .main{

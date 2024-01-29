@@ -20,7 +20,7 @@ const OverView = () => {
 
 
   return (
-    <>
+    <><div className="p-4" style={{backgroundColor:" #f5f5f5"}}>
       <div className="viwePerform">
         <div className="main">
           <div className="mt-4 p-2">
@@ -31,7 +31,7 @@ const OverView = () => {
           </div>
         </div>
 
-        <div className="sideBox">
+        <div className="sideBox mt-4">
           <div className="topTraded">
             <p>Top Traded</p>
             <div className="topTrad">
@@ -71,6 +71,7 @@ const OverView = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

@@ -58,12 +58,12 @@ const Stats = () => {
   };
   const options = {};
   return (
-    <>
-      <div className="stats">
+    <><div className="p-4" style={{backgroundColor:" #f5f5f5"}}>
+      <div className="stats p-2">
         <div className="main">
           <h4>Performance</h4>
           <ChartPnL />
-          <div className="additionalInfo ">
+          <div className="additionalInfo mt-4 ">
             <div className="additional mt-2">
               <FontAwesomeIcon className="font mb-2" icon={faCalendarWeek} />
               <span>{currentUser.tradePerWeek}</span>
@@ -102,7 +102,7 @@ const Stats = () => {
             <p>{currentUser.totalTrades}</p>
           </div>
 
-          <div className="frequentlyTraded mt-4">
+          <div className="frequentlyTraded mt-3">
             <p>Frequently Traded</p>
 
             <div className="frequTrade">
@@ -210,6 +210,7 @@ const Stats = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

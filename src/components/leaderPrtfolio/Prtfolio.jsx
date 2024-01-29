@@ -8,7 +8,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { format, add } from "date-fns";
+import { differenceInDays, add } from "date-fns";
 import faker from "faker";
 import colors from "ansi-colors";
 import './Prtfolio.css'
@@ -16,7 +16,7 @@ import './Prtfolio.css'
 const theme = createTheme();
 
 const getRandomDate = () => {
-  const startDate = new Date("2022-01-01");
+  const startDate = new Date("2023-01-01");
   const endDate = new Date();
   return faker.date.between(startDate, endDate);
 };
@@ -32,6 +32,18 @@ const generateRandomData = () => {
   const name = `${faker.finance.currencyCode()}/${faker.finance.currencyCode()}`;
   const dateOpened = getRandomDate();
   const dateClosed = add(dateOpened, { days: faker.datatype.number(30) });
+  //محاسبه تعداد روزهای بین دو تاریخ
+  const daysDifference = differenceInDays(dateClosed, dateOpened);
+  const Roll = () => {
+    if (daysDifference <= 1) {
+      return 0;
+    } else {
+      let rollResult = daysDifference * 0.01; 
+      console.log(rollResult);
+      console.log(daysDifference);
+      return rollResult;
+    }
+  };
   const stdLots = 0.01;
   const open = getRandomFloat(0.001, 2.0, 5);
   const close = getRandomFloat(0.001, 2.0, 5);
@@ -58,6 +70,7 @@ const generateRandomData = () => {
     close,
     high,
     low,
+    Roll,
     profit,
     pipsText,
     total,
@@ -87,6 +100,7 @@ const Portfolio = () => {
                   <TableCell>Close</TableCell>
                   <TableCell>High</TableCell>
                   <TableCell>Low</TableCell>
+                  <TableCell>ROLL</TableCell>
                   <TableCell>Profit </TableCell>
                   <TableCell>Total </TableCell>
                 </TableRow>
@@ -96,19 +110,22 @@ const Portfolio = () => {
                   <TableRow key={index}>
                   <TableCell>
   {row.name}
-  <div>buy</div>
+  <div> {Math.floor((Math.random() * 2) + 1)===1 ?<span style={{color:"green"}}>buy</span>:<span style={{color:"red"}}>sell</span>}</div>
 </TableCell>
 <TableCell>
-  {format(row.dateOpened, "yyyy-MM-dd HH:mm:ss")}
+  <div>{row.dateOpened.toISOString().slice(0, 10)}</div>
+  <div>{row.dateOpened.toISOString().slice(11, 19)}</div>
 </TableCell>
 <TableCell>
-  {format(row.dateClosed, "yyyy-MM-dd HH:mm:ss")}
+<div>{row.dateClosed.toISOString().slice(0, 10)}</div>
+      <div>{row.dateClosed.toISOString().slice(11, 19)}</div>
 </TableCell>
 <TableCell>{row.stdLots}</TableCell>
 <TableCell>{row.open}</TableCell>
 <TableCell>{row.close}</TableCell>
 <TableCell>{row.high}</TableCell>
 <TableCell>{row.low}</TableCell>
+<TableCell>{row.Roll()}</TableCell>
 <TableCell style={{ color: row.profit >= 0 ? ' #2ce31b' : 'red' }}>
   {`$${row.profit} `}<div>{row.pipsText} pips</div>
 </TableCell>
