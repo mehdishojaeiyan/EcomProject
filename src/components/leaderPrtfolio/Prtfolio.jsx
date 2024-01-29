@@ -11,6 +11,7 @@ import Paper from "@mui/material/Paper";
 import { format, add } from "date-fns";
 import faker from "faker";
 import colors from "ansi-colors";
+import './Prtfolio.css'
 
 const theme = createTheme();
 
@@ -66,7 +67,7 @@ const generateRandomData = () => {
 const rows = Array.from({ length: 10 }, generateRandomData);
 
 const Portfolio = () => {
-  return (
+  return (<div className="bigBox p-4">
     <ThemeProvider theme={theme}>
       <Box sx={{ width: "100%" }}>
         <Paper sx={{ width: "100%", mb: 2 }}>
@@ -123,6 +124,7 @@ const Portfolio = () => {
         </Paper>
       </Box>
     </ThemeProvider>
+    </div>
   );
 };
 

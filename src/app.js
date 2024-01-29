@@ -706,6 +706,7 @@ class App extends Component {
             <Route path="/watchList/:id" element={<WatchList />}></Route>
             <Route path="/topperforming" element={<TopPerforming />}></Route>
             <Route path="/leaders" element={<Leaders />}></Route>
+            <Route path="/watchList" element={<WatchList />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>
           <Footer />

@@ -1,46 +1,54 @@
-import './watchList.css'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import LeaderContext from '../../context/leader';
 import ChartCard from '../../components/personalCard/personalChart';
-import { useParams } from 'react-router-dom';
+import './watchList.css'
+import { ClassNames } from '@emotion/react';
 
+const WatchList = () => {
+  const [watchList, setWatchList] = useState([]);
+  const leaderContext = useContext(LeaderContext);
 
+  useEffect(() => {
+    const storedWatchList = JSON.parse(localStorage.getItem('watchList')) || [];
+    setWatchList(storedWatchList);
+  }, []);
 
-const WatchList = () => {//////
-    
-    const leaderContext = useContext(LeaderContext);
-    const {id} = useParams();
-  
-    const currentUser = leaderContext.leader.find((user) => user.id === parseInt(id));
-    if (!currentUser) {
-      return <p>کاربر پیدا نشد!</p>;
-    }
-    return ( <>
-    <h2 className='p-4'>Watch List</h2>
-    <div className="watcCard p-4">
-    <div className='generalPart mb-3 '>
+  const removeFromWatchList = (userId) => {
+    const updatedWatchList = watchList.filter((user) => user.id !== userId);
+    setWatchList(updatedWatchList);
+    localStorage.setItem('watchList', JSON.stringify(updatedWatchList));
+  };
+
+  return (
+    <>
+      <h2 className='p-4'>Watch List</h2>
+      <div className="watchCard p-4">
+        {watchList.map((user) => (
+          <div key={user.id} className='generalPart dd mb-3 '>
             <div className='firstLine'>
-                <div><p className='risk'>Risk{currentUser.risk}</p></div>
-                <div><Link to={`/leader/${id}`}><img className='personImg' src={currentUser.avatar}/></Link></div>
-                <div><button>-</button></div>
-
+              <div><p className='risk'>Risk{user.risk}</p></div>
+              <div><Link to={`/leader/${user.id}`}><img className='personImg' src={user.avatar} alt={user.name} /></Link></div>
+              <div ><button className='btn btn-outline-warning btn-sm ' onClick={() => removeFromWatchList(user.id)}>-</button></div>
             </div>
             <div className='secondLine'>
-               <span ><Link to={`/leader/${id}`} className='namePersonalCard'>{currentUser.name}</Link></span> 
+              <span><Link to={`/leader/${user.id}`} className='namePersonalCard'>{user.name}</Link></span>
             </div>
             <div className='thirdLine'>
-                <span id='cardCopiers'>COPIERS: {currentUser.copiers}</span>
+              <span id='cardCopiers'>COPIERS: {user.copiers}</span>
             </div>
             <div className='roi'>
-                <p title='ROI'>{currentUser.ROI}</p>
+              <p title='ROI'>{user.ROI}</p>
             </div>
             <div className='chartCard'>
-                <ChartCard/>
+              <ChartCard />
             </div>
-        </div>
-        </div>
-    </> );
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
- 
+
 export default WatchList;

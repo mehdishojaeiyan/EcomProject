@@ -1,3 +1,7 @@
 .reply-button-clicked{
     color: red;
 }
+.ulcomment{
+    list-style-type: none;
+    color: red;
+}

@@ -1,3 +1,9 @@
 .watchCard{
-  display: flex;
+  
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  min-height: 100vh;
+  
 }
+.generalPart{margin: 0 auto;}
+

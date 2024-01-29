@@ -62,7 +62,7 @@ const Feed = ({name}) => {
     <div >
       <h2>{`${name} Feed`}</h2>
       {error && <div className="error-message">{error}</div>} {/* نمایش پیغام خطا اگر وجود داشته باشد */}
-      <ul>
+      <ul className='ulcomment'>
         {comments.map(comment => (
           <li key={comment.id}>
             {comment.text}
@@ -74,7 +74,7 @@ const Feed = ({name}) => {
             </button>
             <button onClick={() => handleLikeClick(comment.id)}>Like ({comment.likes})</button>
             {comment.replies && comment.replies.length > 0 && (
-              <ul>
+              <ul className='ulcomment'>
                 {comment.replies.map(reply => (
                   <li key={reply.id}>{reply.text}</li>
                 ))}
