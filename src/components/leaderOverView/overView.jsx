@@ -33,8 +33,8 @@ const OverView = () => {
 
         <div className="sideBox mt-4">
           <div className="topTraded">
-            <p>Top Traded</p>
-            <div className="topTrad">
+            <h3>Top Traded</h3>
+            <div className="topTrad ">
               <img src={BTC} alt="" />
               <p>BTC</p>
               <span>{currentUser.btc}</span>

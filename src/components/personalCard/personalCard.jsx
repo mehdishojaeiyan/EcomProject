@@ -26,6 +26,7 @@ const PersonalCard = ({ name, img, roi, copiers, id, risk }) => {
       setIsAddedToWatchList(true);
     }
   };
+ 
 
   return (
     <>

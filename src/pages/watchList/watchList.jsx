@@ -21,6 +21,7 @@ const WatchList = () => {
     localStorage.setItem('watchList', JSON.stringify(updatedWatchList));
   };
 
+
   return (
     <>
       <h2 className='p-4'>Watch List</h2>

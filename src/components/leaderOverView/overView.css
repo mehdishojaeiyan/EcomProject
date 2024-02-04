@@ -1,57 +1,55 @@
-*{box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 /* .overViewBigBox{
     display: flex;
     flex-wrap: wrap;
 } */
-.viwePerform{
-    display: flex;
-    flex-wrap: wrap;
-max-width: 100%;
-background-color: white;
-border: 1px solid lightgray;
-border-radius: 5px;
+.viwePerform {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
 }
 
-.main{
-    flex: 6;
-   
+.main {
+  flex: 6;
 }
 
-.sideBox{
-    flex: 2;
-    
-    padding: 10px;
-   
-}
-.topTraded{
-    border: 1px solid lightgray;
-    color:  #7e7e7e;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 100%;
+.sideBox {
+  flex: 2;
 
+  padding: 10px;
 }
-.topTrad{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    border-top: 1px solid lightgray;
-    max-width: 100%;
-    
-    
+.topTraded {
+  border: 1px solid lightgray;
+  color: #7e7e7e;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 100%;
+}
+.topTrad {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-top: 1px solid lightgray;
+  max-width: 100%;
+  padding: 10px;
 }
 
-.topTraded span{
-    color: #16FF00
+.topTraded span {
+  color: #16ff00;
 }
-.info{
-    color: #7e7e7e;
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    display: grid;
-    grid-template-rows: repeat(1,50px);
+.info {
+  color: #7e7e7e;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: repeat(1, 50px);
 }
-.info p{
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+.info p {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
