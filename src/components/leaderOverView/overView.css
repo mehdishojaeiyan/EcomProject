@@ -1,7 +1,11 @@
 *{box-sizing: border-box;}
+/* .overViewBigBox{
+    display: flex;
+    flex-wrap: wrap;
+} */
 .viwePerform{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
+    display: flex;
+    flex-wrap: wrap;
 max-width: 100%;
 background-color: white;
 border: 1px solid lightgray;
@@ -9,11 +13,13 @@ border-radius: 5px;
 }
 
 .main{
-    grid-column: 1/9;
+    flex: 6;
+   
 }
 
 .sideBox{
-    grid-column: 9/-1;
+    flex: 2;
+    
     padding: 10px;
    
 }

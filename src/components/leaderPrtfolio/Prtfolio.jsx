@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useEffect, useState } from 'react';
 import { alpha, createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
@@ -70,16 +71,31 @@ const generateRandomData = () => {
     close,
     high,
     low,
-    Roll,
+    roll: daysDifference <= 1 ? 0 : daysDifference * 0.01,
     profit,
     pipsText,
     total,
   };
 };
 
-const rows = Array.from({ length: 10 }, generateRandomData);
+const rows = Array.from({ length: 100 }, generateRandomData);
 
 const Portfolio = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const rowsPerPage = 5;
+
+  const indexOfLastRow = currentPage * rowsPerPage;
+  const indexOfFirstRow = indexOfLastRow - rowsPerPage;
+  const currentRows = rows.slice(indexOfFirstRow, indexOfLastRow);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  useEffect(() => {
+    // محاسبه تعداد صفحات بر اساس تعداد کل داده‌ها و تعداد سطرهای هر صفحه
+    setTotalPages(Math.ceil(rows.length / rowsPerPage));
+  }, [rows, rowsPerPage]);
+
   return (<div className="bigBox p-4">
     <ThemeProvider theme={theme}>
       <Box sx={{ width: "100%" }}>
@@ -106,7 +122,7 @@ const Portfolio = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row, index) => (
+                {currentRows.map((row, index) => (
                   <TableRow key={index}>
                   <TableCell>
   {row.name}
@@ -125,7 +141,7 @@ const Portfolio = () => {
 <TableCell>{row.close}</TableCell>
 <TableCell>{row.high}</TableCell>
 <TableCell>{row.low}</TableCell>
-<TableCell>{row.Roll()}</TableCell>
+<TableCell>{row.roll}</TableCell>
 <TableCell style={{ color: row.profit >= 0 ? ' #2ce31b' : 'red' }}>
   {`$${row.profit} `}<div>{row.pipsText} pips</div>
 </TableCell>
@@ -138,11 +154,48 @@ const Portfolio = () => {
               </TableBody>
             </Table>
           </TableContainer>
+        
+             <Pagination
+             rowsPerPage={rowsPerPage}
+             totalPages={totalPages}
+             paginate={paginate}
+             currentPage={currentPage}
+            />  
         </Paper>
       </Box>
     </ThemeProvider>
     </div>
   );
 };
+const Pagination = ({ rowsPerPage, totalRows, paginate, currentPage, totalPages }) => {
+  const pageNumbers = [];
+  for (let i = Math.max(1, currentPage - 2); i <= Math.min(currentPage + 2, totalPages); i++) {
+    pageNumbers.push(i);
+  }
 
+  return (
+    <nav>
+      <ul className="pagination p-2">
+        {currentPage > 1 && (
+          <li  key="previous" onClick={() => paginate(currentPage - 1)}>
+            <a className='pageNum' href="#!">&lt;</a>
+          </li>
+        )}
+        {pageNumbers.map((number) => (
+          <li  key={number} className={number === currentPage ? "active   " : ""}>
+            <a  className='pageNum' onClick={() => paginate(number)} href="#!">
+              {number}
+            </a>
+          </li>
+        ))}
+        {currentPage < totalPages && (
+          <li  key="next" onClick={() => paginate(currentPage + 1)}>
+            <a className='pageNum' href="#!">&#62;</a>
+          </li>
+        )}
+      </ul>
+      <p className='totalPage'>last page : {totalPages}</p>
+    </nav>
+  );
+};
 export default Portfolio;

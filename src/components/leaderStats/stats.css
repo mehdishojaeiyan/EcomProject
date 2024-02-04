@@ -1,93 +1,93 @@
-.stats{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-max-width: 100%;
-padding: 10px;
-border: 1px solid lightgray;
-border-radius: 5px;
-background-color: white;
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
 }
-.main{
-    grid-column: 1/9;
+.main {
+  flex: 2;
 }
-.additionalInfo{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    padding: 10px;
+.sideBox {
+  flex: 1;
+  padding: 10px;
 }
-.additional{
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9em;
-    align-items: center;
+.additionalInfo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
 }
-.additional p{
-    color: #9e9e9e;
+.additional {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  align-items: center;
 }
-.font{
-    font-size: 2em;
-    color: lightgray;
+.additional p {
+  color: #9e9e9e;
 }
-.sideBox{
-    grid-column: 9/-1;
-    padding: 10px;
-   
-}
-.chartDescription{
-    padding: 10px;
-    border: 1px solid lightgray;
-    font-size: 0.8em;
-    border-radius: 10px;
+.font {
+  font-size: 2em;
+  color: lightgray;
 }
 
-.chartDescription > span{
-    color: #9e9e9e;
-}
-.frequentlyTraded{
-    border: 1px solid lightgray;
-    color:  #7e7e7e;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 100%;
-    
+.chartDescription {
+  padding: 10px;
+  border: 1px solid lightgray;
 
+  border-radius: 10px;
 }
-.frequTrade{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border-top: 1px solid lightgray;
-    max-width: 100%;
+
+.chartDescription > span {
+  color: #9e9e9e;
+}
+.frequentlyTraded {
+  border: 1px solid lightgray;
+  color: #7e7e7e;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 100%;
+}
+.frequTrade {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid lightgray;
+  max-width: 100%;
 }
 .frequImg {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    column-gap: 10px;
-    flex-wrap: wrap;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  column-gap: 10px;
+  flex-wrap: wrap;
 }
-.frequAVG{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    row-gap: 5px;
-    font-size: 0.7em;
+.frequAVG {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  font-size: 0.8em;
 }
-.frequPercent{
-    flex: 2;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.frequPercent {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.frequPercentProfitable{
-    display: flex;
-    flex-direction: column;
-    /* row-gap: 5px; */
-    flex-wrap: wrap;
-    /* font-size: 0.8em; */
-    
+.frequPercentProfitable {
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 5px; */
+  flex-wrap: wrap;
+  /* font-size: 0.8em; */
 }

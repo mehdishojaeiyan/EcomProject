@@ -1,4 +1,32 @@
-.bigBox{
-    box-shadow: 0px 0px 7px lightgray;
-    background-color: #f5f5f5;
+.bigBox {
+  box-shadow: 0px 0px 7px lightgray;
+  background-color: #f5f5f5;
+}
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pageNum {
+  border: 1px solid lightgray;
+  padding: 5px;
+  border-radius: 30px;
+  color: #363062;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.pageNum:hover {
+  background-color: #f99417;
+}
+.active {
+  padding: 10px;
+  font-weight: bolder;
+}
+.totalPage {
+  color: "#363062";
+
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
 }

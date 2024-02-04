@@ -20,7 +20,7 @@ const OverView = () => {
 
 
   return (
-    <><div className="p-4" style={{backgroundColor:" #f5f5f5"}}>
+    <><div className=" overViewBigBox p-4" style={{backgroundColor:" #f5f5f5"}}>
       <div className="viwePerform">
         <div className="main">
           <div className="mt-4 p-2">

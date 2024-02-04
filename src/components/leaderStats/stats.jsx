@@ -63,7 +63,7 @@ const Stats = () => {
         <div className="main">
           <h4>Performance</h4>
           <ChartPnL />
-          <div className="additionalInfo mt-4 ">
+          <div className="additionalInfo mt-5 ">
             <div className="additional mt-2">
               <FontAwesomeIcon className="font mb-2" icon={faCalendarWeek} />
               <span>{currentUser.tradePerWeek}</span>
@@ -92,8 +92,8 @@ const Stats = () => {
             </div>
           </div>
         </div>
-        <div className="sideBox">
-          <div className="chartDescription">
+        <div className="sideBox mt-5">
+          <div className="chartDescription mt-3">
             <span>Realised Profit</span>
             <p>{currentUser.realisedProfit}</p>
             <span>Profitable Trades</span>
@@ -102,7 +102,7 @@ const Stats = () => {
             <p>{currentUser.totalTrades}</p>
           </div>
 
-          <div className="frequentlyTraded mt-3">
+          <div className="frequentlyTraded mt-4">
             <p>Frequently Traded</p>
 
             <div className="frequTrade">
@@ -135,7 +135,7 @@ const Stats = () => {
                   <span style={{ color: "black" }}>
                     {currentUser.xrpProfitable}
                   </span>
-                  <span>PROFITABLE</span>
+                  <span style={{fontSize:'0.8em'}}>PROFITABLE</span>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@ const Stats = () => {
                   <span style={{ color: "black" }}>
                     {currentUser.ltcProfitable}
                   </span>
-                  <span>PROFITABLE</span>
+                  <span style={{fontSize:'0.8em'}}>PROFITABLE</span>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@ const Stats = () => {
                   <span style={{ color: "black" }}>
                     {currentUser.ethProfitable}
                   </span>
-                  <span>PROFITABLE</span>
+                  <span style={{fontSize:'0.8em'}}>PROFITABLE</span>
                 </div>
               </div>
             </div>

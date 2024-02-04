@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import OverView from "../../components/leaderOverView/overView";
 import Stats from "../../components/leaderStats/stats";
 import Portfolio from "../../components/leaderPrtfolio/Prtfolio";
-import Feed from "../../components/leaderFeed/feed";
+import LeadFeed from "../../components/leaderFeed/feed";
 import { useParams } from "react-router-dom";
 import Progress from "../../components/progressBar/progresBar";
 import {faAward , faWandMagicSparkles ,faStar } from '@fortawesome/free-solid-svg-icons';
@@ -80,7 +80,7 @@ const Leader = () => {
         </div>
         <div className="leadPerformace">
           <div className="leadHead">
-            <button><Link to={`/watchList/${id}`} >
+            <button className="leaderAddWatclist p-2"><Link to={`/watchList/${id}`} >
               <FontAwesomeIcon icon={faStar} />
               <span>Add To Watch List</span></Link>
             </button>
@@ -100,7 +100,7 @@ const Leader = () => {
             {selectedComponent === 'OverView' && <OverView />}
             {selectedComponent === 'Stats' && <Stats />}
             {selectedComponent === 'Portfolio' && <Portfolio />}
-            {selectedComponent === 'Feed' && <Feed name={currentUser.name} />}
+            {selectedComponent === 'Feed' && <LeadFeed name={currentUser.name} avatar={currentUser.avatar} />}
           
             </div>
           </section>
