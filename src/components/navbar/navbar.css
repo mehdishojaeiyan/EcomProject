@@ -53,6 +53,9 @@
 .Language {
   margin-right: 20px;
   color: #f5f5f5 !important;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 5px;
 }
 #search {
   border: 3px solid #f99417;
@@ -74,4 +77,10 @@
 #form {
   /* display: flex; */
   position: relative;
+}
+.navLnBtn {
+  background-color: #363062 !important;
+  color: white !important;
+  font-size: 1.2em !important;
+ 
 }

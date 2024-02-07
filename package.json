@@ -37,6 +37,7 @@
     "react-loading-skeleton": "^3.3.1",
     "react-router-dom": "^6.21.1",
     "react-scripts": "^5.0.1",
+    "replyke": "^2.0.20",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.5",
     "styled-components": "^6.1.8",

@@ -15,9 +15,7 @@
   margin-left: 3px;
   margin-right: 3px;
 }
-.pageNum:hover {
-  background-color: #f99417;
-}
+
 .active {
   padding: 10px;
   font-weight: bolder;
@@ -30,3 +28,13 @@
   display: flex;
   justify-content: center;
 }
+.portfolioBtn{
+
+  background-color: white !important;
+  padding: 0px !important;
+  font-size: 0.8em !important;
+  margin: 0 auto !important;
+  padding-left: 15px !important;
+  padding-bottom: 5px !important;
+}
+

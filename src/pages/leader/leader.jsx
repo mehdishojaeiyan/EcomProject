@@ -101,7 +101,7 @@ const Leader = () => {
             {selectedComponent === 'OverView' && <OverView />}
             {selectedComponent === 'Stats' && <Stats />}
             {selectedComponent === 'Portfolio' && <Portfolio />}
-            {selectedComponent === 'Feed' && <LeadFeed name={currentUser.name} avatar={currentUser.avatar} />}
+            {selectedComponent === 'Feed' && <LeadFeed name={currentUser.name} avatar={currentUser.avatar} id={currentUser.id} />}
           
             </div>
           </section>

@@ -11,6 +11,7 @@ import OverView from "./components/leaderOverView/overView";
 import Leaders from "./pages/leaders/leaders";
 import WatchList from "./pages/watchList/watchList";
 import TopPerforming from "./pages/topPerforming/topPerforming";
+import Community from "./pages/community/community";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/home/home";
 import avatar1 from "./assets/image/avatar1.webp";
@@ -706,6 +707,7 @@ class App extends Component {
             <Route path="/watchList/:id" element={<WatchList />}></Route>
             <Route path="/topperforming" element={<TopPerforming />}></Route>
             <Route path="/leaders" element={<Leaders />}></Route>
+            <Route path="/community" element={<Community />}></Route>
             <Route path="/watchList" element={<WatchList />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>

@@ -14,17 +14,18 @@ import {
 import ETH from "../../assets/image/ETHUSD.svg";
 import LTC from "../../assets/image/LTCUSD.svg";
 import XRP from "../../assets/image/XRPUSD.svg";
-import { Chart as ChartJS, ArcElement,Tooltip,  Legend } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { useParams } from "react-router-dom";
-
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Stats = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const leaderContext = useContext(LeaderContext);
-  const currentUser = leaderContext.leader.find((user) => user.id === parseInt(id));
+  const currentUser = leaderContext.leader.find(
+    (user) => user.id === parseInt(id)
+  );
   if (!currentUser) {
     return <p>کاربر پیدا نشد!</p>;
   }
@@ -58,159 +59,160 @@ const Stats = () => {
   };
   const options = {};
   return (
-    <><div className="p-4" style={{backgroundColor:" #f5f5f5"}}>
-      <div className="stats p-2">
-        <div className="main">
+    <>
+      <div className="p-4" style={{ backgroundColor: " #f5f5f5" }}>
           <h4>Performance</h4>
-          <ChartPnL />
-          <div className="additionalInfo mt-5 ">
-            <div className="additional mt-2">
-              <FontAwesomeIcon className="font mb-2" icon={faCalendarWeek} />
-              <span>{currentUser.tradePerWeek}</span>
-              <p>Trades Per Week</p>
+        <div className="stats p-2">
+          <div className="main mt-4">
+            <ChartPnL />
+            <div className="additionalInfo mt-4 ">
+              <div className="additional mt-2">
+                <FontAwesomeIcon className="font mb-2" icon={faCalendarWeek} />
+                <span>{currentUser.tradePerWeek}</span>
+                <p>Trades Per Week</p>
+              </div>
+
+              <div className="additional mt-2">
+                <FontAwesomeIcon className="font mb-2" icon={faStopwatch} />
+                <span>{currentUser.AVGHoldingTime}</span>
+                <p>AVG. Holding Time</p>
+              </div>
+
+              <div className="additional mt-2">
+                <FontAwesomeIcon className="font mb-2" icon={faUserCheck} />
+                <span>{currentUser.ActiveSince}</span>
+                <p>Active Since</p>
+              </div>
+
+              <div className="additional mt-2">
+                <FontAwesomeIcon
+                  className="font mb-2"
+                  icon={faArrowUpWideShort}
+                />
+                <span>{currentUser.profitableWeeks}</span>
+                <p>Profitable Weeks</p>
+              </div>
+            </div>
+          </div>
+          <div className="sideBox mt-2">
+            <div className="chartDescription mt-3">
+              <span>Realised Profit</span>
+              <p>{currentUser.realisedProfit}</p>
+              <span>Profitable Trades</span>
+              <p>{currentUser.profitableTrades}</p>
+              <span>Total Trades</span>
+              <p>{currentUser.totalTrades}</p>
             </div>
 
-            <div className="additional mt-2">
-              <FontAwesomeIcon className="font mb-2" icon={faStopwatch} />
-              <span>{currentUser.AVGHoldingTime}</span>
-              <p>AVG. Holding Time</p>
-            </div>
+            <div className="frequentlyTraded mt-4">
+              <p>Frequently Traded</p>
 
-            <div className="additional mt-2">
-              <FontAwesomeIcon className="font mb-2" icon={faUserCheck} />
-              <span>{currentUser.ActiveSince}</span>
-              <p>Active Since</p>
-            </div>
+              <div className="frequTrade">
+                <div className="frequImg mt-2 mb-2">
+                  <img src={XRP} alt="" />
+                  <span>XRP</span>
+                </div>
+                <div className="frequAVG mt-3">
+                  <span>
+                    AVG.Profit{" "}
+                    <span style={{ color: "#16FF00" }}>
+                      {currentUser.xrpAVGprofit}{" "}
+                      <FontAwesomeIcon icon={faArrowUp} />
+                    </span>
+                  </span>
+                  <span>
+                    AVG.Loss &nbsp;{" "}
+                    <span style={{ color: "red" }}>
+                      {" "}
+                      {currentUser.xrpAVGloss}{" "}
+                      <FontAwesomeIcon icon={faArrowDown} />
+                    </span>
+                  </span>
+                </div>
+                <div className="frequPercent mt-2">
+                  <div style={{ width: "30%" }}>
+                    <Doughnut data={dataXRP} options={options}></Doughnut>
+                  </div>
+                  <div className="frequPercentProfitable mt-1">
+                    <span style={{ color: "black" }}>
+                      {currentUser.xrpProfitable}
+                    </span>
+                    <span style={{ fontSize: "0.8em" }}>PROFITABLE</span>
+                  </div>
+                </div>
+              </div>
+              <div className="frequTrade">
+                <div className="frequImg mt-2 mb-2">
+                  <img src={LTC} alt="" />
+                  <span>LTC</span>
+                </div>
 
-            <div className="additional mt-2">
-              <FontAwesomeIcon
-                className="font mb-2"
-                icon={faArrowUpWideShort}
-              />
-              <span>{currentUser.profitableWeeks}</span>
-              <p>Profitable Weeks</p>
+                <div className="frequAVG mt-3">
+                  <span>
+                    AVG.Profit{" "}
+                    <span style={{ color: "#16FF00" }}>
+                      {currentUser.ltcAVGprofit}{" "}
+                      <FontAwesomeIcon icon={faArrowUp} />
+                    </span>
+                  </span>
+                  <span>
+                    AVG.Loss &nbsp;{" "}
+                    <span style={{ color: "red" }}>
+                      {" "}
+                      {currentUser.ltcAVGloss}{" "}
+                      <FontAwesomeIcon icon={faArrowDown} />
+                    </span>
+                  </span>
+                </div>
+                <div className="frequPercent mt-2">
+                  <div style={{ width: "30%" }}>
+                    <Doughnut data={dataLTC} options={options}></Doughnut>
+                  </div>
+                  <div className="frequPercentProfitable mt-1">
+                    <span style={{ color: "black" }}>
+                      {currentUser.ltcProfitable}
+                    </span>
+                    <span style={{ fontSize: "0.8em" }}>PROFITABLE</span>
+                  </div>
+                </div>
+              </div>
+              <div className="frequTrade">
+                <div className="frequImg mt-2 mb-2">
+                  <img src={ETH} alt="" />
+                  <span>ETH</span>
+                </div>
+                <div className="frequAVG mt-3">
+                  <span>
+                    AVG.Profit{" "}
+                    <span style={{ color: "#16FF00" }}>
+                      {currentUser.ethAVGprofit}{" "}
+                      <FontAwesomeIcon icon={faArrowUp} />
+                    </span>
+                  </span>
+                  <span>
+                    AVG.Loss &nbsp;{" "}
+                    <span style={{ color: "red" }}>
+                      {" "}
+                      {currentUser.ethAVGloss}{" "}
+                      <FontAwesomeIcon icon={faArrowDown} />
+                    </span>
+                  </span>
+                </div>
+                <div className="frequPercent mt-2">
+                  <div style={{ width: "30%" }}>
+                    <Doughnut data={dataETH} options={options}></Doughnut>
+                  </div>
+                  <div className="frequPercentProfitable mt-1">
+                    <span style={{ color: "black" }}>
+                      {currentUser.ethProfitable}
+                    </span>
+                    <span style={{ fontSize: "0.8em" }}>PROFITABLE</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="sideBox mt-5">
-          <div className="chartDescription mt-3">
-            <span>Realised Profit</span>
-            <p>{currentUser.realisedProfit}</p>
-            <span>Profitable Trades</span>
-            <p>{currentUser.profitableTrades}</p>
-            <span>Total Trades</span>
-            <p>{currentUser.totalTrades}</p>
-          </div>
-
-          <div className="frequentlyTraded mt-4">
-            <p>Frequently Traded</p>
-
-            <div className="frequTrade">
-              <div className="frequImg mt-2 mb-2">
-                <img src={XRP} alt="" />
-                <span>XRP</span>
-              </div>
-              <div className="frequAVG mt-3">
-                <span>
-                  AVG.Profit{" "}
-                  <span style={{ color: "#16FF00" }}>
-                    {currentUser.xrpAVGprofit}{" "}
-                    <FontAwesomeIcon icon={faArrowUp} />
-                  </span>
-                </span>
-                <span>
-                  AVG.Loss &nbsp;{" "}
-                  <span style={{ color: "red" }}>
-                    {" "}
-                    {currentUser.xrpAVGloss}{" "}
-                    <FontAwesomeIcon icon={faArrowDown} />
-                  </span>
-                </span>
-              </div>
-              <div className="frequPercent mt-2">
-                <div style={{ width: "30%" }}>
-                  <Doughnut data={dataXRP} options={options}></Doughnut>
-                </div>
-                <div className="frequPercentProfitable mt-1">
-                  <span style={{ color: "black" }}>
-                    {currentUser.xrpProfitable}
-                  </span>
-                  <span style={{fontSize:'0.8em'}}>PROFITABLE</span>
-                </div>
-              </div>
-            </div>
-            <div className="frequTrade">
-              <div className="frequImg mt-2 mb-2">
-                <img src={LTC} alt="" />
-                <span>LTC</span>
-              </div>
-
-              <div className="frequAVG mt-3">
-                <span>
-                  AVG.Profit{" "}
-                  <span style={{ color: "#16FF00" }}>
-                    {currentUser.ltcAVGprofit}{" "}
-                    <FontAwesomeIcon icon={faArrowUp} />
-                  </span>
-                </span>
-                <span>
-                  AVG.Loss &nbsp;{" "}
-                  <span style={{ color: "red" }}>
-                    {" "}
-                    {currentUser.ltcAVGloss}{" "}
-                    <FontAwesomeIcon icon={faArrowDown} />
-                  </span>
-                </span>
-              </div>
-              <div className="frequPercent mt-2">
-                <div style={{ width: "30%" }}>
-                  <Doughnut data={dataLTC} options={options}></Doughnut>
-                </div>
-                <div className="frequPercentProfitable mt-1">
-                  <span style={{ color: "black" }}>
-                    {currentUser.ltcProfitable}
-                  </span>
-                  <span style={{fontSize:'0.8em'}}>PROFITABLE</span>
-                </div>
-              </div>
-            </div>
-            <div className="frequTrade">
-              <div className="frequImg mt-2 mb-2">
-                <img src={ETH} alt="" />
-                <span>ETH</span>
-              </div>
-              <div className="frequAVG mt-3">
-                <span>
-                  AVG.Profit{" "}
-                  <span style={{ color: "#16FF00" }}>
-                    {currentUser.ethAVGprofit}{" "}
-                    <FontAwesomeIcon icon={faArrowUp} />
-                  </span>
-                </span>
-                <span>
-                  AVG.Loss &nbsp;{" "}
-                  <span style={{ color: "red" }}>
-                    {" "}
-                    {currentUser.ethAVGloss}{" "}
-                    <FontAwesomeIcon icon={faArrowDown} />
-                  </span>
-                </span>
-              </div>
-              <div className="frequPercent mt-2">
-                <div style={{ width: "30%" }}>
-                  <Doughnut data={dataETH} options={options}></Doughnut>
-                </div>
-                <div className="frequPercentProfitable mt-1">
-                  <span style={{ color: "black" }}>
-                    {currentUser.ethProfitable}
-                  </span>
-                  <span style={{fontSize:'0.8em'}}>PROFITABLE</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </>
   );

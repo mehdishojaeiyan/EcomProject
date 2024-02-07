@@ -60,12 +60,13 @@ class OverViewChart extends Component {
           }
         },
         toolTip: {
+          positin:"bottom",
           shared: true
         },
         data: [{
           name: "Price (in USD)",
           type: "splineArea",
-          color: "#3576a8",
+          color: "rgba(255, 167, 35, 1)",
           yValueFormatString: "$#,###.##",
           xValueFormatString: "MMM DD YYYY",
           dataPoints : this.state.dataPoints

@@ -1,239 +1,156 @@
-
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import {
-  FeedUser,
-  FeedSummary,
-  FeedMeta,
-  FeedLike,
-  FeedLabel,
-  FeedExtra,
-  FeedEvent,
-  FeedDate,
-  FeedContent,
-  Feed,
-  Icon,
+  CommentText,
+  CommentMetadata,
+  CommentGroup,
+  CommentContent,
+  CommentAvatar,
+  CommentActions,
+  CommentAction,
+  CommentAuthor,
+  FormTextArea,
+  Button,
+  Comment,
+  Form,
+  Header,
+  FormInput,
 } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
-import "./feed.css";
-import LeaderContext from "../../context/leader";
 
-const LeadFeed = ({name , avatar}) => {
-  const leaderContext = useContext(LeaderContext);
-  const [feeds, setFeeds] = useState([
-  
-  ]);
-  const handleToggleLike = (feedId) => {
-    setFeeds((prevFeeds) =>
-      prevFeeds.map((feed) =>
-        feed.id === feedId
-          ? { ...feed, likes: feed.likes + (feed.isLiked ? -1 : 1), isLiked: !feed.isLiked }
-          : feed
-      )
-    );
-  };
+import avatar from "../../assets/image/commentavar.png";
+import "./feed.css";
+import { Icon } from "semantic-ui-react";
+
+
+const LeadFeed = () => {
+  const [comment, setComment] = useState([]);
+  const [newComment, setNewComment] = useState("");
   const [inputError, setInputError] = useState(null);
   const validateInput = () => {
-    if (newFeed.trim() === "") {
+    if (newComment.trim() === "") {
       setInputError("Please enter a valid input.");
       return false;
     }
     setInputError(null);
     return true;
   };
-  const [newFeed, setNewFeed] = useState("");
-  const handleAddNewFeed = () => {
+  const handleComment = () => {
     if (validateInput()) {
-      const newFeedData = {
-        avatar: leaderContext.leader[12].avatar,
-        name: leaderContext.leader[12].name,
-        activity: newFeed,
-        date: "Just Now",
-        likes: 0,
+      const newCommentData = {
+        avatar: avatar,
+        name: "you",
+        activity: newComment,
+        date: new Date(),
       };
-  
-      // اضافه کردن اطلاعات فید جدید به لیست فیدها
-      setFeeds((prevFeeds) => [...prevFeeds, newFeedData]);
-      
-      // پاک کردن متن ورودی برای آماده‌سازی برای ورودی جدید
-      setNewFeed("");
+      setComment([...comment, newCommentData]);
+      setNewComment("");
     }
   };
-
-  const [like,setLike]=useState([{likeId:0,likeCount:32,likePsition:false}
-  ,{likeId:1,likeCount:12,likePsition:false}
-,{likeId:2,likeCount:43,likePsition:false}
-,{likeId:3,likeCount:65,likePsition:false}
-,{likeId:4,likeCount:2,likePsition:false}]);
-  const handlelike=(likeid)=>{
-    const upDateLike =[...like]
-    
-    if (upDateLike[likeid].likePsition) {
-      upDateLike[likeid].likeCount -= 1;
-    } else {
-      upDateLike[likeid].likeCount += 1;
-    }
-    upDateLike[likeid].likePsition = !upDateLike[likeid].likePsition;
-    setLike(upDateLike);
-  }
   return (
     <>
+      {" "}
       <div className="feedBigBox p-4">
         <div className="leaderFeed p-4">
-          <h3>{name}'s Feed</h3>
-          <Feed>
-            <FeedEvent>
-              <FeedLabel>
-                <img src={avatar}/>
-              </FeedLabel>
-              <FeedContent>
-                <FeedSummary>
-                  <FeedUser>{name}</FeedUser> added you as a friend
-                  <FeedDate>1 Hour Ago</FeedDate>
-                </FeedSummary>
-                <FeedMeta>
-                <FeedLike onClick={()=>handlelike(0)}>
-                    <Icon name={like[0].likePsition ? "like up red" : "like outline up"} />
-                    {like[0].likeCount} Likes
-                  </FeedLike>
-                </FeedMeta>
-              </FeedContent>
-            </FeedEvent>
-
-            <FeedEvent>
-              <FeedLabel>
-                <img src={leaderContext.leader[2].avatar} />
-              </FeedLabel>
-              <FeedContent>
-                <FeedSummary>
-                  <a>{leaderContext.leader[2].name}</a> added{" "}
-                  <a>2 new illustrations</a>
-                  <FeedDate>4 days ago</FeedDate>
-                </FeedSummary>
-                <FeedExtra images>
-                  <a>
-                    <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                  </a>
-                  <a>
-                    <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                  </a>
-                </FeedExtra>
-                <FeedMeta>
-                <FeedLike onClick={()=>handlelike(1)}>
-                    <Icon name={like[1].likePsition ? "like up red" : "like outline up"} />
-                    {like[1].likeCount} Likes
-                  </FeedLike>
-                </FeedMeta>
-              </FeedContent>
-            </FeedEvent>
-
-            <FeedEvent>
-              <FeedLabel>
-                <img src={leaderContext.leader[8].avatar} />
-              </FeedLabel>
-              <FeedContent>
-                <FeedSummary
-                  date="2 Days Ago"
-                  user="Jenny Hess"
-                  content="add you as a friend"
-                />
-                <FeedMeta>
-                <FeedLike onClick={()=>handlelike(2)}>
-                    <Icon name={like[2].likePsition ? "like up red" : "like outline up"} />
-                    {like[2].likeCount} Likes
-                  </FeedLike>
-                </FeedMeta>
-              </FeedContent>
-            </FeedEvent>
-
-            <FeedEvent>
-              <FeedLabel>
-                <img src={leaderContext.leader[7].avatar} />
-              </FeedLabel>
-              <FeedContent>
-                <FeedSummary>
-                  <a>Joe Henderson</a> posted on his page
-                  <FeedDate>3 days ago</FeedDate>
-                </FeedSummary>
-                <FeedExtra text>
-                  Ours is a life of constant reruns. We're always circling back
-                  to where we'd we started, then starting all over again. Even
-                  if we don't run extra laps that day, we surely will come back
-                  for more of the same another day soon.
-                </FeedExtra>
-                <FeedMeta>
-                <FeedLike onClick={()=>handlelike(3)}>
-                    <Icon name={like[3].likePsition ? "like up red" : "like outline up"} />
-                    {like[3].likeCount} Likes
-                  </FeedLike>
-                </FeedMeta>
-              </FeedContent>
-            </FeedEvent>
-
-            <FeedEvent>
-              <FeedLabel>
-                <img src={leaderContext.leader[5].avatar} />
-              </FeedLabel>
-              <FeedContent>
-                <FeedSummary>
-                  <a>Justen Kitsune</a> added <a>2 new photos</a> of you
-                  <FeedDate>4 days ago</FeedDate>
-                </FeedSummary>
-                <FeedExtra images>
-                  <a>
-                    <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                  </a>
-                  <a>
-                    <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                  </a>
-                </FeedExtra>
-                <FeedMeta>
-                  <FeedLike onClick={()=>handlelike(4)}>
-                    <Icon name={like[4].likePsition ? "like up red" : "like outline up"} />
-                    {like[4].likeCount} Likes
-                  </FeedLike>
-                </FeedMeta>
-              </FeedContent>
-            </FeedEvent>
-            {feeds.map((feed, index) => (
-              <FeedEvent key={index}>
-                <FeedLabel>
-                <img
-                    src={feed.avatar}
-                    alt="User Avatar"
-                  />
-                </FeedLabel>
-                <FeedContent>
-                  <FeedSummary>
-                   <div> <FeedUser>{feed.name}</FeedUser> </div>
-                   {feed.activity}
-                    <FeedDate>{feed.date}</FeedDate>
-                  </FeedSummary>
-                  <FeedMeta>
-                  <FeedLike onClick={() => handleToggleLike(feed.id)}>
-          <Icon name={feed.isLiked ? "like up red" : "like outline up"} />
-          {feed.likes} Likes
-        </FeedLike>
-                    
-
-                  </FeedMeta>
-                </FeedContent>
-              </FeedEvent>
+          <CommentGroup>
+            <Header as="h3">Comments</Header>
+            <div className="feedComment mt-2 p-2">
+            <Comment>
+              <CommentAvatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
+              <CommentContent>
+                <CommentAuthor as="a">Matt</CommentAuthor>
+                <CommentMetadata>
+                  <div>Yesterday at 5:42PM</div>
+                </CommentMetadata>
+                <CommentText>
+                  <p>How artistic!</p>
+                </CommentText>
+                <CommentActions>
+                  <CommentAction> <Icon name="reply" /> Reply</CommentAction>
+                </CommentActions>
+              </CommentContent>
+            </Comment></div>
+            <div className="feedComment mt-2 p-2">
+            <Comment>
+              <CommentAvatar src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
+              <CommentContent>
+                <CommentAuthor as="a">Elliot Fu</CommentAuthor>
+                <CommentMetadata>
+                  <div>Yesterday at 12:30AM</div>
+                </CommentMetadata>
+                <CommentText>
+                  <p>
+                    This has been very useful for my research. Thanks as well!
+                  </p>
+                </CommentText>
+                <CommentActions>
+                  <CommentAction > <Icon name="reply" />  Reply</CommentAction>
+                </CommentActions>
+              </CommentContent>
+              <CommentGroup>
+              <div className="feedComment mt-2 p-3">
+                <Comment>
+                  <CommentAvatar src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg" />
+                  <CommentContent>
+                    <CommentAuthor as="a">Jenny Hess</CommentAuthor>
+                    <CommentMetadata>
+                      <div>Just now</div>
+                    </CommentMetadata>
+                    <CommentText><p>Elliot you are always so right :)</p></CommentText>
+                    <CommentActions>
+                      <CommentAction> <Icon name="reply" />  Reply</CommentAction>
+                    </CommentActions>
+                  </CommentContent>
+                </Comment></div>
+              </CommentGroup>
+            </Comment></div>
+            <div className="feedComment mt-2 p-2">
+            <Comment>
+              <CommentAvatar src="https://react.semantic-ui.com/images/avatar/small/joe.jpg" />
+              <CommentContent>
+                <CommentAuthor as="a">Joe Henderson</CommentAuthor>
+                <CommentMetadata>
+                  <div>5 days ago</div>
+                </CommentMetadata>
+                <CommentText>
+                  <p>Dude, this is awesome. Thanks so much</p>
+                </CommentText>
+                <CommentActions>
+                  <CommentAction> <Icon name="reply" /> Reply</CommentAction>
+                </CommentActions>
+              </CommentContent>
+            </Comment> </div>
+            {comment.map((comment, index) => (<div className="feedComment mt-2 p-2">
+              <Comment key={index}>
+                <CommentAvatar src={comment.avatar} />
+                <CommentContent>
+                  <CommentAuthor as="a">{comment.name} </CommentAuthor>
+                  <CommentMetadata>
+                    <div>now</div>
+                  </CommentMetadata>
+                  <CommentText>
+                    <p>{comment.activity}</p>
+                  </CommentText>
+                  <CommentActions >
+                    <CommentAction active> <Icon name="reply" /> Reply</CommentAction>
+                  </CommentActions>
+                </CommentContent>
+              </Comment></div>
             ))}
 
-            {/* متن ورودی برای افزودن فید جدید */}
-            <div>
-            {inputError && <div className="error-message">{inputError}</div>}
-              <input
-                type="text"
-                placeholder="Enter new text"
-                value={newFeed}
-                onChange={(e) => setNewFeed(e.target.value)}
+            <Form reply >
+              {inputError && <div className="error-message">{inputError}</div>}
+              <FormInput
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
               />
-             
-
-              <button  onClick={handleAddNewFeed}>Send</button>
-            </div>
-          </Feed>
+              <Button
+                onClick={handleComment}
+                content="Post a Comment"
+                labelPosition="left"
+                icon="edit"
+                primary
+              />
+            </Form>
+          </CommentGroup>
         </div>
       </div>
     </>
