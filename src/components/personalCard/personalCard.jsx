@@ -27,6 +27,7 @@ const PersonalCard = ({ name, img, roi, copiers, id, risk }) => {
     }
   };
  
+  // localStorage.removeItem('watchList')
 
   return (
     <>
