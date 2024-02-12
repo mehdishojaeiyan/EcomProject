@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   CommentText,
   CommentMetadata,
@@ -138,6 +138,12 @@ const LeadFeed = () => {
   const handleShowReplies = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index));
   };
+
+  // for focus on the input when the page is loaded
+  const inputRef= useRef(null)
+  useEffect(()=>{
+    inputRef.current.focus()
+  },[]) 
   return (
     <>
       <div className="feedBigBox p-4">
@@ -228,7 +234,8 @@ const LeadFeed = () => {
                   Please enter a value
                 </Label>
               )}
-              <FormInput
+              <input
+              ref={inputRef}
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
               />

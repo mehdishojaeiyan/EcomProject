@@ -5,7 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./app";
 import {BrowserRouter} from "react-router-dom"
 import "animate.css";
-ReactDOM.render(<BrowserRouter>
+ReactDOM.render(
+<React.StrictMode>
+<BrowserRouter>
                 <App/>
        
-</BrowserRouter> , document.getElementById('root'));
+</BrowserRouter></React.StrictMode> , document.getElementById('root'));
