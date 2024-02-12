@@ -32,6 +32,7 @@ const Leader = () => {
     return <p>کاربر پیدا نشد!</p>;
   }
 
+// localStorage.removeItem('watchList')
   
 
   return (
@@ -89,7 +90,7 @@ const Leader = () => {
           <section className="performanceSection">
             <div className="performance">
             <div className="leadNav">
-            <ul className="nav nav-tabs">
+            <ul className="nav ">
 
             <li  onClick={() => handleLiClick('OverView')}><Link className="nav-link  navLi" >OverView</Link></li>
        <li  onClick={() => handleLiClick('Stats')}><Link className="nav-link  navLi" >Stats</Link></li>

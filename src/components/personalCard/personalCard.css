@@ -23,7 +23,7 @@
   /* margin: 8px; */
 }
 .risk {
-  background-color: #f99417;
+  background-color: #363062;
   /* padding-left: 10px; */
   /* padding-right: 10px; */
   padding: 5px 10px;
@@ -73,8 +73,9 @@
   margin-right: auto;
 }
 #star:hover {
-  background-color: #363062;
+  /* background-color: #363062; */
   color: #f99417;
+  /* border-radius: 50%; */
 }
 #cardCopiers{
   font-size: 0.8em;
