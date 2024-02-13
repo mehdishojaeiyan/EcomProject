@@ -5,10 +5,8 @@ import LeaderContext from "../../context/leader";
 import ChartCard from "../../components/personalCard/personalChart";
 import "./watchList.css";
 import { ClassNames } from "@emotion/react";
-<<<<<<< HEAD
 import { Icon } from "semantic-ui-react";
-=======
->>>>>>> fixA
+
 
 const WatchList = () => {
   const [watchList, setWatchList] = useState([]);
@@ -25,11 +23,11 @@ const WatchList = () => {
     localStorage.setItem("watchList", JSON.stringify(updatedWatchList));
   };
 
-<<<<<<< HEAD
-=======
+
+
   // localStorage.removeItem('watchList')
 
->>>>>>> fixA
+
   return (
     <>
       <h2 className="p-4">Watch List</h2>
@@ -51,21 +49,13 @@ const WatchList = () => {
               </div>
               <div>
                 <button
-<<<<<<< HEAD
+
                   className="btn btn-outline-warning btn-sm "
                   onClick={() => removeFromWatchList(user.id)}
                 >
                  <Icon  name="delete " /> 
                  {/* window minimize */}
-=======
-                // btn-outline-warning
-                
-                  id="delButton"
-                  className="btn btn-sm  "
-                  onClick={() => removeFromWatchList(user.id)}
-                >
-                  <p className="delsign">del</p>
->>>>>>> fixA
+
                 </button>
               </div>
             </div>
