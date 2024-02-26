@@ -32,8 +32,8 @@ const PersonalCard = ({ name, img, roi, copiers, id, risk }) => {
   return (
     <>
       <div className='generalPart mb-3'>
-        <div className='firstLine'>
-          <div><p className='risk'>Risk{risk}</p></div>
+        <div className='firstLine mt-1'>
+          <div><p className='risk'>Risk {risk}</p></div>
           <div><Link to={`/leader/${id}`}><img className='personImg' src={img} alt={name} /></Link></div>
           <div><Link to={`/watchList/${id}`} id='star' onClick={addToWatchList}><FontAwesomeIcon icon={faStar} /></Link></div>
         </div>

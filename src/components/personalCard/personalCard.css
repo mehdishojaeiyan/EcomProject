@@ -12,7 +12,7 @@
   background-color: #f5f5f5;
   color: #363062;
   align-items: center;
-  box-shadow: 5px 5px 5px #4d4c7d;
+  box-shadow: 5px 5px 5px  #4d4c7d;
   /* background-image: radial-gradient(#f5f5f5, #4d4c7d); */
   overflow: hidden;
 }
@@ -28,7 +28,8 @@
   /* padding-right: 10px; */
   padding: 5px 10px;
   border-radius: 20px;
-  font-size: 0.8em;
+  font-size: 0.6em;
+  font-weight: bold;
   color: #f5f5f5;
   border: 2px solid #f5f5f5;
 }
@@ -45,6 +46,7 @@
 .namePersonalCard{
   color: #363062;
  
+ 
   
 }
 .roi {
@@ -54,17 +56,17 @@
 }
 .roi > p {
   width: auto;
-  height: 30px;
-  border: 3px solid #16ff00;
+  height: 25px;
+  border: 2px solid #16ff00;
   border-radius: 20px;
   color: #4d4c7d;
   padding: 0 5px;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 .personImg {
   margin-right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   box-shadow: 2px 2px 2px #737373;
 }

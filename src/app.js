@@ -12,13 +12,16 @@ import Leaders from "./pages/leaders/leaders";
 import WatchList from "./pages/watchList/watchList";
 import TopPerforming from "./pages/topPerforming/topPerforming";
 import Community from "./pages/community/community";
+import Login from "./pages/login/login"
+import Market from "./pages/market/market";
+import DigiCoin from "./components/digicoin/digiCoin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/home/home";
-import avatar1 from "./assets/image/avatar1.webp";
+import avatar1 from "./assets/image/avatar1.jpg";
 import avatar2 from "./assets/image/avatar2.jpg";
 import avatar3 from "./assets/image/avatar3.jpg";
-import avatar4 from "./assets/image/avatar4.webp";
-import avatar5 from "./assets/image/avatar5.webp";
+import avatar4 from "./assets/image/avatar4.jpg";
+import avatar5 from "./assets/image/avatar5.jpg";
 import avatar6 from "./assets/image/avatar6.jpg";
 import avatar7 from "./assets/image/avatar7.jpg";
 import avatar8 from "./assets/image/avatar8.jpg";
@@ -26,7 +29,7 @@ import avatar9 from "./assets/image/avatar9.jpg";
 import avatar10 from "./assets/image/avatar10.jpg";
 import avatar11 from "./assets/image/avatar11.jpg";
 import avatar12 from "./assets/image/avatar12.jpg";
-import avatar13 from "./assets/image/avatar13.png";
+import avatar13 from "./assets/image/avatar13.jpg";
 import avatar14 from "./assets/image/avatar14.jpg";
 import avatar15 from "./assets/image/avatar15.jpg";
 import avatar16 from "./assets/image/jonas.jpg";
@@ -709,6 +712,9 @@ class App extends Component {
             <Route path="/leaders" element={<Leaders />}></Route>
             <Route path="/community" element={<Community />}></Route>
             <Route path="/watchList" element={<WatchList />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/market" element={<Market />}></Route>
+            <Route path="/digiCoin" element={<DigiCoin />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>
           <Footer />

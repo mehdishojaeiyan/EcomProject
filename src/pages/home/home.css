@@ -1,5 +1,5 @@
 .homeContainer {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 .headHome {
   display: flex;
@@ -30,6 +30,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
+  border-bottom: 1px solid lightgray;
 }
 .roadContent {
   display: flex;
@@ -56,7 +57,6 @@
   text-align: center;
   position: relative;
   box-sizing: border-box;
-  padding: 10px;
 }
 
 body {
@@ -88,4 +88,61 @@ body {
   height: 100vh;
   position: sticky;
   top: 0;
+}
+.supportPanel {
+  background-image: url("../../assets/image/support.jpg");
+  background-size: cover;
+  color: white;
+  height: 100%;
+}
+.whyEcom{
+  background-color: #f5f5f5;
+}
+.whyEcomBoxs {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.whyBox {
+  border: 1px solid lightgray;
+  
+  border-radius: 20px ;
+  transition-duration:500ms ;
+}
+.whyBox:hover{
+  transform: scale(1.1);
+
+}
+.educationPanel{
+  background-image: url("../../assets/image/education.jpg");
+  background-size: cover;
+  color: white;
+  height: 100%;
+}
+.demopanel{
+  background-image: url("../../assets/image/demoaccont.jpg");
+  background-size: cover;
+  color: white;
+  height: 100%;
+}
+.joinCommunity{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 100vh;
+
+}
+.communityImg{
+  flex: 2;
+  width: 80%;
+}
+.commucontent{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
 }

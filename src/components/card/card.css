@@ -6,7 +6,7 @@
   height: 400px;
   background-color: #f5f5f5;
   display: grid;
-  border: 3px solid #363062;
+  border: 2px solid #363062;
   color: #363062;
   margin: auto;
   padding: 20px;
@@ -54,7 +54,7 @@
 .sizeBtn {
   width: auto;
   height: 30px;
-  border: 3px solid #16ff00;
+  border: 1px solid #16ff00;
   border-radius: 20px;
   color: #4d4c7d;
 }
