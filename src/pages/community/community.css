@@ -10,3 +10,7 @@
       color: red;
       margin-top: 5px;
     }
+    .feedBox{
+      margin: 0 auto;
+      width: 50%;
+    }

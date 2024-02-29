@@ -1,7 +1,7 @@
 import "./home.css";
 import React, { useEffect, useState, useRef } from "react";
 import homeTrade from "../../assets/image/homeTrade2.jpeg";
-import roadImg from "../../assets/image/roadeMap.svg";
+import roadImg from "../../assets/image/img4.png";
 import community from "../../assets/image/community.png";
 import mail from "../../assets/image/mail.jpg";
 import telePhone from "../../assets/image/telSupport.jpg";
@@ -13,6 +13,7 @@ import { Card, Icon, Button } from "semantic-ui-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Home = () => {
@@ -143,12 +144,12 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="roadAnim">
+         
             <div className="roadImg">
-              {/* <img className="mt-3" src={roadImg} alt="" />
-              <p className="h3 roadText mb-5 ">We’re with you all the way. </p> */}
+              <img className="mt-3" style={{width:"85%"}} src={roadImg} alt="" />
+              {/* <p className="h3 roadText mb-5 ">We’re with you all the way. </p> */}
             </div>
-          </div>
+          
         </div>
         <div className="joinCommunity mt-5 mb-5 p-5">
           <div className="communityImg">
@@ -312,6 +313,7 @@ const Home = () => {
           </main>
         </div>
       </div>
+
     </>
   );
 };

@@ -28,10 +28,11 @@
 }
 .item-menu {
   color: #f5f5f5 !important;
+  border-radius:20px ;
 }
 .item-menu:hover {
   /* background-color: #f99417; */
-  border: 2px solid  #f99417;
+  border: 1px solid  #f99417;
   background-color: #4d4c7d;
   border-radius: 20px;
   /* padding: 2px; */

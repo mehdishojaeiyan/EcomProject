@@ -33,6 +33,7 @@ import avatar13 from "./assets/image/avatar13.jpg";
 import avatar14 from "./assets/image/avatar14.jpg";
 import avatar15 from "./assets/image/avatar15.jpg";
 import avatar16 from "./assets/image/jonas.jpg";
+import AllForex from "./components/allForex/allForex";
 
 class App extends Component {
   state = {
@@ -715,6 +716,7 @@ class App extends Component {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/market" element={<Market />}></Route>
             <Route path="/digiCoin" element={<DigiCoin />}></Route>
+            <Route path="/forexExchengeRates" element={<AllForex />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>
           <Footer />

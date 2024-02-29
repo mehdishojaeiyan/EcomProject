@@ -1,13 +1,15 @@
 .test {
   color: #363062 #4d4c7d #f99417 #f5f5f5 #16ff00 #12ad04;
 }
-
+.cryptoMarket{
+  background-color: #f5f5f5;
+  border-radius: 30px;
+}
 .digiCoinPrice {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  background-color: #f5f5f5;
-  border-radius: 30px;
+
 }
 .digiCoin {
   display: flex;
@@ -19,4 +21,23 @@
   background-color: #007aff;
   color: #fff;
   width: 100%;
+}
+.whatIsForex ,.whatIsCrypto{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.whatIsForexChild1 ,.whatIsCryptoChild1{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.whatIsForexChild2 ,.whatIsCryptoChild2{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  text-align: justify;
+  flex: 2;
 }

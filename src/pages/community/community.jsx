@@ -83,7 +83,7 @@ const Community = ({ name, avatar }) => {
       <div className="communityBigBox p-4">
         <div className="community p-4">
           <h3>Community</h3>
-          <Feed>
+          <Feed className="feedBox">
             <FeedEvent>
               <FeedLabel>
                 <img src={avatar} />
