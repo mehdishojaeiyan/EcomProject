@@ -168,7 +168,7 @@ const Home = () => {
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
               >
-                Join our big community
+               <a style={{color:"#fff"}} href="/community"> Join our big community</a>
               </Button>
             </div>
           </div>
@@ -265,7 +265,7 @@ const Home = () => {
                       header="Blog"
                       description="Comprehensive articles on transactions and financial markets."
                       extra={
-                        <a>
+                        <a href="/blog">
                           <Icon name="book" />
                           Blog
                         </a>

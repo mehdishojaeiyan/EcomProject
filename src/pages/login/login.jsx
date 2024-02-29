@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   GridColumn,
   FormInput,
@@ -7,37 +7,42 @@ import {
   Form,
   Grid,
   Segment,
-} from 'semantic-ui-react'
+} from "semantic-ui-react";
+import "./login.css"
+import loginimg from "../../assets/image/login.jpg"
 
-const Login = () => (
-  <Segment placeholder>
-    <Grid columns={2} relaxed='very' stackable>
+const Login = () => (<div className="biglogin">
+   <div></div>
+  <div className="p-5">
+  <Segment>
+ 
       <GridColumn>
         <Form>
           <FormInput
-            icon='user'
-            iconPosition='left'
-            label='Username'
-            placeholder='Username'
+            icon="user"
+            iconPosition="left"
+            label="Username"
+            placeholder="Username"
           />
           <FormInput
-            icon='lock'
-            iconPosition='left'
-            label='Password'
-            type='password'
+            icon="lock"
+            iconPosition="left"
+            label="Password"
+            type="password"
           />
 
-          <Button content='Login' primary />
+          <Button content="Login" primary />
         </Form>
       </GridColumn>
 
-      <GridColumn verticalAlign='middle'>
-        <Button content='Sign up' icon='signup' size='big' />
+      <GridColumn verticalAlign="middle">
+        <Button content="Sign up" icon="signup" size="big" />
       </GridColumn>
-    </Grid>
-
-    <Divider vertical>Or</Divider>
+  
   </Segment>
-)
+  </div>
+ 
+  </div>
+);
 
-export default Login ;
+export default Login;

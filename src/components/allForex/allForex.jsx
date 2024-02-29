@@ -81,7 +81,7 @@ const AllForex = () => {
       <h1 className='mt-4 p-4'>Forex Exchange Rate</h1>
 
       <div className='allForex p-5'>
-        <div className='column p-5'>
+        <div className='forexColumn p-5'>
           {firstColumn.map(([currency, rate],index) => (
             <div className='allMarketForex p-3' key={currency}>
                 
@@ -90,7 +90,7 @@ const AllForex = () => {
             </div>
           ))}
         </div>
-        <div className='column p-5'>
+        <div className='forexColumn p-5'>
           {secondColumn.map(([currency, rate],index) => (
             <div className='allMarketForex p-3' key={currency}>
               <span>{index + halfLength + 1}. {currency}/USD</span>

@@ -1,0 +1,8 @@
+.biglogin{
+    background-image: url("../../assets/image/login.jpg");
+    background-size: cover;
+    height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #fff !important;
+}
