@@ -85,7 +85,8 @@ function NavBar() {
           </NavDropdown.Item>
         </NavDropdown>
        <Nav.Link href='/login'><button className="login">Sgin up</button></Nav.Link> 
-        <button className="login">Login</button>
+       <Nav.Link href='/login'><button className="login">Login</button></Nav.Link> 
+        
         {/* <MyApp/> */}
       </Container>
     </Navbar>
