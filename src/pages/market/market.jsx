@@ -120,13 +120,29 @@
 
 // export default Market;
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef ,useContext } from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import MArketLoading from "./marketLoading";
 import "./market.css";
 import Forex from "./forex";
 import fxLogo from "../../assets/image/FX_logo.png"
 import cryptoLogo from '../../assets/image/cryptoLogo.png'
+import CryptoContext from "../../context/crypyoContext";
+import Crypto from "./crypto/crypto";
+import Test from "../../components/test/test";
+import CrudeOilWTI from "./commodities/crudeOilWTI";
+import CrudeOilBrent from "./commodities/crudeOilBrent";
+import NaturalGas from "./commodities/naturalGas";
+import Aluminum from "./commodities/aluminum";
+import Copper from "./commodities/copper";
+import Wheat from "./commodities/wheat";
+import Corn from "./commodities/corn";
+import Cotton from "./commodities/cotton";
+import Sugar from "./commodities/sugar";
+import Coffee from "./commodities/coffee";
+
+
 
 const Market = () => {
   const [marketData, setMarketData] = useState([]);
@@ -157,15 +173,21 @@ const Market = () => {
 
   return (
     <div className="market p-4">
+      
       <h1 style={{fontSize:"4em"}}>Crypto</h1>
-      <div className="mt-5 p-4 whatIsCrypto">
+      <div className="mainCrypto">
+      <Crypto/>
+      <div className="  whatIsCrypto">
         <div className="whatIsCryptoChild1">
-          <p className="h1 p-3">What is cryptocurrency?</p>
-          <img src={cryptoLogo} alt="" />
-        </div>
-        <div className="whatIsCryptoChild2"><p className="h2 p-5">Cryptocurrency is a digital payment system that doesn't rely on banks to verify transactions. It’s a peer-to-peer system that can enable anyone anywhere to send and receive payments. Instead of being physical money carried around and exchanged in the real world, cryptocurrency payments exist purely as digital entries to an online database describing specific transactions. When you transfer cryptocurrency funds, the transactions are recorded in a public ledger. Cryptocurrency is stored in digital wallets.
+          <p className="h4 mt-2">What is cryptocurrency?</p>
+          <img className="mt-5" src={cryptoLogo} style={{width:'30%'}} alt="" />
+          <div className="whatIsCryptoChild2"><p className=" p-2">Cryptocurrency is a digital payment system that doesn't rely on banks to verify transactions. It’s a peer-to-peer system that can enable anyone anywhere to send and receive payments. Instead of being physical money carried around and exchanged in the real world, cryptocurrency payments exist purely as digital entries to an online database describing specific transactions. When you transfer cryptocurrency funds, the transactions are recorded in a public ledger. Cryptocurrency is stored in digital wallets.
 </p></div>
+        </div>
+        
       </div>
+      </div>
+    
       {loading ? (
         <MArketLoading />
       ) : (
@@ -173,9 +195,9 @@ const Market = () => {
           <div className="cryptoMarket  p-5">
             <div className="digiCoinPrice">
               {marketData.map((currency) => (
-                <div className="digiCoin p-3" key={currency.id}>
-                  <h2>
-                    {currency.name} ({currency.symbol.toUpperCase()})
+                <div className="digiCoin p-3" key={currency.id} >
+                  <h2><Link to={`/gauge/${currency.id}`} >
+                    {currency.name} ({currency.symbol.toUpperCase()})</Link>
                   </h2>
                   <p>Current Price (USD):</p>
                   <p className="h2"> {currency.current_price}</p>
@@ -199,6 +221,26 @@ const Market = () => {
       <p className="p-3 mt-3 lead">
             <a href="forexExchengeRates">View All</a>
             </p>
+              <h1>Commoodities</h1>
+            <div className="mt-5 p-5" style={{border:'1px solid lightGray'}}>
+              <div>
+          <p className="p-4 h4" style={{display:'grid',gridTemplateColumns:"repeat(3,1fr)",
+        borderBottom:"1px solid gray"
+        }}><span>Name</span><span>Unit</span><span>Value</span></p>
+        </div>
+            <CrudeOilWTI/>
+            <CrudeOilBrent/>
+            <NaturalGas/>
+            <Aluminum/>
+            <Copper/>
+            <Wheat/>
+            <Corn/>
+            <Cotton/>
+            <Sugar/>
+            <Coffee/>
+            
+    </div>
+ 
     </div>
   );
 };

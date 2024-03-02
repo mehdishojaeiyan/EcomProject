@@ -1,86 +1,46 @@
-// import { useState ,useEffect } from "react";
-// import axios from "axios";
-
-// const Test = ()=>{
-
-// const [forex,setForex]=useState({})
-// const [forexLoading,setForexLoading]=useState(true)
-
-// useEffect(()=>{
-//     const fetchforex= async ()=>{
-//        try {
-//         const response = await axios.get('https://openexchangerates.org/api/latest.json?31bc30b27f22449ab12574eb4c06f6dd');
-//         setForex(response.data)
-//         setForexLoading(false)
-//         console.log(response)
-//        } catch (error) {
-//         console.error("fetcchforex has error:" ,error)
-//        }
-//     }
-//     fetchforex()
-// },[]);
-
-// return(<><div>
-// { forexLoading ?(<p>loading...</p>):(
-//  <div>
-//     {forex.map(curency=>{
-//         <div> {curency.data}</div>
-//     })}
-//  </div>   
-// )}</div>
-// </>);
-// };
-// export default Test;
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Test = () => {
-  const [exchangeRates, setExchangeRates] = useState([]);
+const StockData = () => {
+  const [stockData, setStockData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchExchangeRates = async () => {
-        try {
-            const apiKey = '31bc30b27f22449ab12574eb4c06f6dd';
-            const response = await axios.get(
-              `https://open.exchangerates.org/v1/time-series.json?start_date=2024-02-20&end_date=2024-02-27&base=USD&symbols=EUR,GBP,CAD,AUD&app_id=${apiKey}`
-            );
-            setExchangeRates(response.data.rates);
-          } catch (error) {
-            console.error('Error fetching exchange rates:', error);
-          }
+    const fetchStockData = async () => {
+      try {
+        const response = await axios.get(
+          'https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=MSFT,AAPL,GOOGL&apikey=YOUR_API_KEY'
+        );
+        setStockData(response.data['Stock Quotes']);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      }
     };
 
-    fetchExchangeRates();
+    fetchStockData();
   }, []);
 
   return (
     <div>
-      <h2>Exchange Rates for the Past Week</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>EUR</th>
-            <th>GBP</th>
-            <th>CAD</th>
-            <th>AUD</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(exchangeRates).map(date => (
-            <tr key={date}>
-              <td>{date}</td>
-              <td>{exchangeRates[date].EUR}</td>
-              <td>{exchangeRates[date].GBP}</td>
-              <td>{exchangeRates[date].CAD}</td>
-              <td>{exchangeRates[date].AUD}</td>
-            </tr>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <h2>Stock Data</h2>
+          {stockData.map(stock => (
+            <div key={stock['1. symbol']}>
+              <h3>{stock['1. symbol']}</h3>
+              <p>Price: {stock['2. price']}</p>
+              <p>Volume: {stock['3. volume']}</p>
+              <p>Timestamp: {stock['4. timestamp']}</p>
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Test;
+export default StockData;

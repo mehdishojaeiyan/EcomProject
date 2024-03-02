@@ -39,8 +39,8 @@ function NavBar() {
               id="basic-nav-dropdown"
             >
               <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item href="/gauge">
+              gauge
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />

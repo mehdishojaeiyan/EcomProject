@@ -35,6 +35,7 @@ import avatar15 from "./assets/image/avatar15.jpg";
 import avatar16 from "./assets/image/jonas.jpg";
 import AllForex from "./components/allForex/allForex";
 import Blog from "./pages/blog/blog";
+import Gauge from './components/gauge/gauge'
 
 class App extends Component {
   state = {
@@ -710,6 +711,7 @@ class App extends Component {
           <Routes>
             <Route path="/leader/:id" element={<Leader />}></Route>
             <Route path="/watchList/:id" element={<WatchList />}></Route>
+            <Route path="/gauge/:id" element={<Gauge />}></Route>
             <Route path="/topperforming" element={<TopPerforming />}></Route>
             <Route path="/leaders" element={<Leaders />}></Route>
             <Route path="/community" element={<Community />}></Route>
@@ -719,6 +721,7 @@ class App extends Component {
             <Route path="/digiCoin" element={<DigiCoin />}></Route>
             <Route path="/forexExchengeRates" element={<AllForex />}></Route>
             <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/gauge" element={<Gauge />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>
           <Footer />
