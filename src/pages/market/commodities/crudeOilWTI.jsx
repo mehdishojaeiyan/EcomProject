@@ -13,7 +13,7 @@ const CrudeOilWTI = () => {
           "https://www.alphavantage.co/query?function=WTI&interval=monthly&apikey=demo"
         );
         setStockData(response.data);
-      
+
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -30,9 +30,22 @@ const CrudeOilWTI = () => {
         <p>Loading...</p>
       ) : (
         <div>
-          <p className="p-4 h4" style={{display:'grid',gridTemplateColumns:"repeat(3,1fr)",
-        borderBottom:"1px solid gray",backgroundColor:"lightgray" 
-        }}><Link to={`/gauge/${stockData.name}`} >{stockData.name}</Link><span>{stockData.unit}</span><span>{stockData.data[0].value}</span></p>
+          <p
+            className="p-4 "
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(6,1fr)",
+              borderBottom: "1px solid gray",
+              backgroundColor: "lightgray",
+            }}
+          >
+            <Link to={`/gauge/${stockData.name}`}>Crude Oil WTI</Link>
+            <span>{stockData.unit}</span>
+            <span>{stockData.data[0].value}</span>
+            <span>78.32</span>
+            <span>79.77</span>
+            <span>89,881</span>
+          </p>
         </div>
       )}
     </div>
