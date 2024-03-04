@@ -47,7 +47,7 @@ const rows = [
     
 ];
 
-export default function NyseWtchPP() {
+export default function LseWtchPP() {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 300 }} aria-label="customized table">
