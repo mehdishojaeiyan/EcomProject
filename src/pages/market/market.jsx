@@ -21,17 +21,14 @@ import Coffee from "./commodities/coffee";
 import NYSE from "./nyse/nyse";
 import NASDAQ from "./nasdaq/nasdaq";
 import LSE from "./lse/lse";
-<<<<<<< HEAD
 import usd from "../../assets/image/usd.jpg";
 import womenUsd from "../../assets/image/womenUsd.jpg";
 import goldbtc from "../../assets/image/goldbtc.jpg";
 import mrbtc from "../../assets/image/mrbtc.webp";
-=======
 import NyseWtchPP from "./nyse/nyseWtchPP";
 import NasdaqWtchPP from "./nasdaq/nasdaqWtchPP";
 import LseWtchPP from "./lse/lseWtchPP";
 import FwbWtchPP from "./fwb/fwbWtchPP";
->>>>>>> fixMarket
 
 const Market = () => {
   const [marketData, setMarketData] = useState([]);
@@ -62,7 +59,7 @@ const Market = () => {
 
   return (
     <>
-      <div className="marketMenu mb-5">
+      <div className="marketMenu p-2 mb-5">
         <a href="#Crypto">Crypto</a>
         <a href="#forex">forex</a>
         <a href="#Commodities">Commodities</a>
@@ -70,6 +67,7 @@ const Market = () => {
         <a href="#NASDAQ">NASDAQ</a>
         <a href="#LSE">LSE</a>
         <a href="#FWB">FWB</a>
+        
       </div>
       <div className="market p-4">
         <h1 className=" p-4" style={{ fontSize: "4em" }} id="Crypto">
@@ -77,9 +75,11 @@ const Market = () => {
         </h1>
         <div className="mainCrypto">
           <Crypto />
-          <div className="  whatIsCrypto">
+          <div className="  whatIsCrypto p-2">
             <div className="whatIsCryptoChild1">
-              <p className="h4 mt-2">Bitcoin NFT NodeMonkes Sells for $1M as BTC Inches Toward $69K</p>
+              <p className="h4 mt-2">
+                Bitcoin NFT NodeMonkes Sells for $1M as BTC Inches Toward $69K
+              </p>
               <img
                 className="mt-3"
                 src={goldbtc}
@@ -87,11 +87,16 @@ const Market = () => {
                 alt=""
               />
               <div className="whatIsCryptoChild2">
-                <p className=" p-2">
-                  Bitcoin-based collections traded more volume than Ethereum collections in the past 24 hours, which shows network adoption as bitcoin prices inch closer to highs.
+                <p className=" p-2" style={{borderBottom:"1px solid gray"}}> 
+                  Bitcoin-based collections traded more volume than Ethereum
+                  collections in the past 24 hours, which shows network adoption
+                  as bitcoin prices inch closer to highs.
                 </p>
               </div>
-              <p className="h4 mt-2">Bitcoin Rally Leaves More Than 97% of Addresses in Profit, Blockchain Data Show</p>
+              <p className="h4 mt-2">
+                Bitcoin Rally Leaves More Than 97% of Addresses in Profit,
+                Blockchain Data Show
+              </p>
               <img
                 className="mt-3"
                 src={mrbtc}
@@ -99,8 +104,9 @@ const Market = () => {
                 alt=""
               />
               <div className="whatIsCryptoChild2">
-                <p className=" p-2">
-                  Most bitcoin addresses bought coins at prices lower than the going market rate, according to IntoTheBlock.
+                <p className=" p-2" >
+                  Most bitcoin addresses bought coins at prices lower than the
+                  going market rate, according to IntoTheBlock.
                 </p>
               </div>
             </div>
@@ -111,24 +117,21 @@ const Market = () => {
         </h1>
         <div className="mainForex">
           <Forex />
-          <div className=" whatIsForex">
+          <div className=" whatIsForex p-2">
             <div className="whatIsForexChild1">
               <p className="h4 mt-2"> US Dollar Continues to Find Buyers</p>
-              <img
-                className="mt-3"
-                src={usd}
-                style={{ width: "45%" }}
-                alt=""
-              />
+              <img className="mt-3" src={usd} style={{ width: "45%" }} alt="" />
 
               <div className="whatIsForexChild2">
-                <p className=" p-2">
-                The US dollar pulled back initially against the Japanese yen this week, only to find buyers on that dip to find value in that move.
-
-
+                <p className=" p-2" style={{borderBottom:"1px solid gray"}}>
+                  The US dollar pulled back initially against the Japanese yen
+                  this week, only to find buyers on that dip to find value in
+                  that move.
                 </p>
               </div>
-              <p className="h4 mt-2">Australian Dollar vs US Dollar Technical Analysis</p>
+              <p className="h4 mt-2">
+                Australian Dollar vs US Dollar Technical Analysis
+              </p>
               <img
                 className="mt-3"
                 src={womenUsd}
@@ -137,8 +140,10 @@ const Market = () => {
               />
 
               <div className="whatIsForexChild2">
-                <p className=" p-2">
-                The Australian dollar continues to see a lot of noisy behavior as we are in the midst of major resistance and support near where we are.
+                <p className=" p-2" >
+                  The Australian dollar continues to see a lot of noisy behavior
+                  as we are in the midst of major resistance and support near
+                  where we are.
                 </p>
               </div>
             </div>
@@ -147,11 +152,12 @@ const Market = () => {
         <p className="p-3 mt-3 lead">
           <a href="forexExchengeRates">View All</a>
         </p>
-        <h1 className="mt-5 p-4" id="Commodities ">
+        
+        <h1 style={{ fontSize: "4em" }} className="mt-5 p-4" id="#Commodities">
           Commoodities
         </h1>
         <div className="mainForex">
-          <div className="mt-3" style={{ border: "1px solid lightGray" }}>
+          <div className="mt-3">
             <div>
               <p
                 className="p-4 h4"
@@ -191,7 +197,7 @@ const Market = () => {
               />
 
               <div className="whatIsForexChild2">
-                <p className=" p-2">
+                <p className=" p-2" >
                   Forex (FX) market is a global electronic network for currency
                   trading. It has no central physical location, yet the forex
                   market is the largest, most liquid market in the world by
@@ -227,8 +233,8 @@ const Market = () => {
             <div className="whatIsCryptoChild1">
               <p className="h4 mt-2">People Also Watch</p>
 
-              <div className="whatIsCryptoChild2">
-         <NasdaqWtchPP/>
+              <div className="whatIsCryptoChild2 p-1">
+                <NasdaqWtchPP />
               </div>
             </div>
           </div>
@@ -241,9 +247,9 @@ const Market = () => {
           <div className="  whatIsCrypto">
             <div className="whatIsCryptoChild1">
               <p className="h4 mt-2">People Also Watch</p>
- 
-              <div className="whatIsCryptoChild2">
-                <LseWtchPP/>
+
+              <div className="whatIsCryptoChild2 p-1">
+                <LseWtchPP />
               </div>
             </div>
           </div>
@@ -256,9 +262,9 @@ const Market = () => {
           <div className="  whatIsCrypto">
             <div className="whatIsCryptoChild1">
               <p className="h4 mt-2">People Also Watch</p>
-             
-              <div className="whatIsCryptoChild2">
-               <FwbWtchPP/>
+
+              <div className="whatIsCryptoChild2 p-1">
+                <FwbWtchPP />
               </div>
             </div>
           </div>
