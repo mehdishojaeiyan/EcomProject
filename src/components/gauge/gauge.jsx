@@ -12,7 +12,7 @@ const Gauge = () => {
       <div className="gaugeBigbox p-5">
         <h1 style={{ fontSize: "4em" }}>{id}</h1>
 
-        <p className="h2 p-3 mt-5">Dependencies</p>
+        <p className="h2 p-3 mt-5">Metric</p>
         <div className="allGauge mb-5">
           <div className="gauge mb-4">
             <GaugeComponent
