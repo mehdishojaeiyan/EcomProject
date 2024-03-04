@@ -9,3 +9,27 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+.gaugeSwitch{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.gaugeSwitchbox{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;
+  justify-content: space-around;
+}
+.gaugeSwitchbox img{
+  width: 80px;
+}
+.gaugeSwitchLbox{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+
+}
+.xup{
+  font-size: 1.5em;
+  font-weight: bolder;
+}

@@ -36,7 +36,7 @@ const CrudeOilWTI = () => {
               display: "grid",
               gridTemplateColumns: "repeat(6,1fr)",
               borderBottom: "1px solid gray",
-              backgroundColor: "lightgray",
+              backgroundColor: "#e9e9e9",
             }}
           >
             <Link to={`/gauge/${stockData.name}`}>Crude Oil WTI</Link>

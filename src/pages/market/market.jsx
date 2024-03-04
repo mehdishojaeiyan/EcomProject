@@ -120,8 +120,9 @@ const Market = () => {
         <p className="p-3 mt-3 lead">
           <a href="forexExchengeRates">View All</a>
         </p>
-        <h1  className="mt-5 p-4" id="Commodities">Commoodities</h1>
-        <div className="mt-5 p-5" style={{ border: "1px solid lightGray" }}>
+        <h1  className="mt-5 p-4" id="Commodities ">Commoodities</h1>
+        <div className="mainForex">
+        <div className="mt-3" style={{ border: "1px solid lightGray" }}>
           <div>
             <p
               className="p-4 h4"
@@ -149,6 +150,28 @@ const Market = () => {
           <Cotton />
           <Sugar />
           <Coffee />
+        </div>
+        <div className="whatIsForex">
+        <div className="whatIsForexChild1">
+              <p className="h4 mt-3">People Also Watch</p>
+              <img
+                className="mt-5"
+                src={fxLogo}
+                style={{ width: "30%" }}
+                alt=""
+              />
+
+              <div className="whatIsForexChild2">
+                <p className=" p-2">
+                  Forex (FX) market is a global electronic network for currency
+                  trading. It has no central physical location, yet the forex
+                  market is the largest, most liquid market in the world by
+                  trading volume, with trillions of dollars changing hands every
+                  day. Most of the trading is done through banks, brokers, and
+                  financial institutions.
+                </p>
+              </div>
+        </div></div>
         </div>
         <h1 className=" p-4" style={{ fontSize: "4em" }} id="NYSE">NYSE</h1>
         <div className="mainCrypto">
