@@ -21,6 +21,10 @@ import Coffee from "./commodities/coffee";
 import NYSE from "./nyse/nyse";
 import NASDAQ from "./nasdaq/nasdaq";
 import LSE from "./lse/lse";
+import usd from "../../assets/image/usd.jpg";
+import womenUsd from "../../assets/image/womenUsd.jpg";
+import goldbtc from "../../assets/image/goldbtc.jpg";
+import mrbtc from "../../assets/image/mrbtc.webp";
 
 const Market = () => {
   const [marketData, setMarketData] = useState([]);
@@ -66,24 +70,28 @@ const Market = () => {
           <Crypto />
           <div className="  whatIsCrypto">
             <div className="whatIsCryptoChild1">
-              <p className="h4 mt-2">What is cryptocurrency?</p>
+              <p className="h4 mt-2">Bitcoin NFT NodeMonkes Sells for $1M as BTC Inches Toward $69K</p>
               <img
-                className="mt-5"
-                src={cryptoLogo}
-                style={{ width: "30%" }}
+                className="mt-3"
+                src={goldbtc}
+                style={{ width: "45%" }}
                 alt=""
               />
               <div className="whatIsCryptoChild2">
                 <p className=" p-2">
-                  Cryptocurrency is a digital payment system that doesn't rely
-                  on banks to verify transactions. It’s a peer-to-peer system
-                  that can enable anyone anywhere to send and receive payments.
-                  Instead of being physical money carried around and exchanged
-                  in the real world, cryptocurrency payments exist purely as
-                  digital entries to an online database describing specific
-                  transactions. When you transfer cryptocurrency funds, the
-                  transactions are recorded in a public ledger. Cryptocurrency
-                  is stored in digital wallets.
+                  Bitcoin-based collections traded more volume than Ethereum collections in the past 24 hours, which shows network adoption as bitcoin prices inch closer to highs.
+                </p>
+              </div>
+              <p className="h4 mt-2">Bitcoin Rally Leaves More Than 97% of Addresses in Profit, Blockchain Data Show</p>
+              <img
+                className="mt-3"
+                src={mrbtc}
+                style={{ width: "45%" }}
+                alt=""
+              />
+              <div className="whatIsCryptoChild2">
+                <p className=" p-2">
+                  Most bitcoin addresses bought coins at prices lower than the going market rate, according to IntoTheBlock.
                 </p>
               </div>
             </div>
@@ -96,22 +104,32 @@ const Market = () => {
           <Forex />
           <div className=" whatIsForex">
             <div className="whatIsForexChild1">
-              <p className="h4 mt-2">What is Forex Trading?</p>
+              <p className="h4 mt-2"> US Dollar Continues to Find Buyers</p>
               <img
-                className="mt-5"
-                src={fxLogo}
-                style={{ width: "30%" }}
+                className="mt-3"
+                src={usd}
+                style={{ width: "45%" }}
                 alt=""
               />
 
               <div className="whatIsForexChild2">
                 <p className=" p-2">
-                  Forex (FX) market is a global electronic network for currency
-                  trading. It has no central physical location, yet the forex
-                  market is the largest, most liquid market in the world by
-                  trading volume, with trillions of dollars changing hands every
-                  day. Most of the trading is done through banks, brokers, and
-                  financial institutions.
+                The US dollar pulled back initially against the Japanese yen this week, only to find buyers on that dip to find value in that move.
+
+
+                </p>
+              </div>
+              <p className="h4 mt-2">Australian Dollar vs US Dollar Technical Analysis</p>
+              <img
+                className="mt-3"
+                src={womenUsd}
+                style={{ width: "45%" }}
+                alt=""
+              />
+
+              <div className="whatIsForexChild2">
+                <p className=" p-2">
+                The Australian dollar continues to see a lot of noisy behavior as we are in the midst of major resistance and support near where we are.
                 </p>
               </div>
             </div>
