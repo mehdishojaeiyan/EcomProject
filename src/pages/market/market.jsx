@@ -29,6 +29,8 @@ import NyseWtchPP from "./nyse/nyseWtchPP";
 import NasdaqWtchPP from "./nasdaq/nasdaqWtchPP";
 import LseWtchPP from "./lse/lseWtchPP";
 import FwbWtchPP from "./fwb/fwbWtchPP";
+import coffee from "../../assets/image/coffee.jpg";
+import wheat from "../../assets/image/wheat.jpg";
 
 const Market = () => {
   const [marketData, setMarketData] = useState([]);
@@ -188,22 +190,30 @@ const Market = () => {
           </div>
           <div className="whatIsForex">
             <div className="whatIsForexChild1">
-              <p className="h4 mt-3">People Also Watch</p>
+              <p className="h4 mt-3">The Red Sea attacks are creating chaos in the global coffee trade</p>
               <img
-                className="mt-5"
-                src={fxLogo}
-                style={{ width: "30%" }}
+                className="mt-3"
+                src={coffee}
+                style={{ width: "45%" }}
                 alt=""
               />
 
               <div className="whatIsForexChild2">
                 <p className=" p-2" >
-                  Forex (FX) market is a global electronic network for currency
-                  trading. It has no central physical location, yet the forex
-                  market is the largest, most liquid market in the world by
-                  trading volume, with trillions of dollars changing hands every
-                  day. Most of the trading is done through banks, brokers, and
-                  financial institutions.
+                  Buyers are turning down shipments from Vietnam that pass through the Red Sea, seeking supplies from Brazil instead, as prices of robusta coffee surge.
+                </p>
+              </div>
+              <p className="h4 mt-3">Commodities round-up: Gold, wheat and oil prices gain</p>
+              <img
+                className="mt-3"
+                src={wheat}
+                style={{ width: "45%" }}
+                alt=""
+              />
+
+              <div className="whatIsForexChild2">
+                <p className=" p-2" >
+                  A look at how oil prices, precious metals and wheat futures are performing this week.
                 </p>
               </div>
             </div>
