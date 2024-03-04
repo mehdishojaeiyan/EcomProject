@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const CryptoChart = () => {
+const NasdaqChart = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -56,8 +56,8 @@ const CryptoChart = () => {
 
       // تنظیم رنگ ناحیه زیر نمودار با رنگ خط نمودار
       const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, 'rgba(18,173,4,1)');
-      gradient.addColorStop(1, 'rgba(255, 167, 35, 0)');
+      gradient.addColorStop(0, 'rgba(77,76,125,1)');
+      gradient.addColorStop(1, 'rgba(77,76,125, 0)');
       context.fillStyle = gradient;
 
       // رسم مستطیل به عنوان ناحیه زیر نمودار
@@ -80,4 +80,4 @@ const CryptoChart = () => {
   return <canvas ref={canvasRef} />;
 };
 
-export default CryptoChart;
+export default NasdaqChart;

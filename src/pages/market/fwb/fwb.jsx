@@ -6,12 +6,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import TableHead from "@mui/material/TableHead";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./forex.css";
-import ForexChart from "./forexChart";
-import CryptoLoading from "../crypto/cryptoLoading";
+import LSEChart from "./lseChart";
+import FWBChart from "./lseChart";
 
 const generateRandomNumber = () => {
   const randomNumber = (Math.random() * 2 - 1).toFixed(4);
@@ -19,26 +17,62 @@ const generateRandomNumber = () => {
 };
 
 const randomNumber = generateRandomNumber();
-const israndomNumberPositive = randomNumber >= 0;
-const randomNumberPrecentage = israndomNumberPositive
-  ? Math.random().toFixed(2)
-  : -Math.random().toFixed(2);
+
+
+const fwbRows =[ 
+    {id:1 , label:"AAPL" , price:"179.66 ",open:"179.55", bid:"0.00 x 900" ,volume:"73,563,082" },
+    {id:2 , label:"MSFT" , price:"415.50 ",open:"411.27", bid:"0.00 x 1300" ,volume:"17,823,445"},
+    {id:3 , label:"AMZN" , price:"178.22" ,open:"176.75", bid:"0.00 x 1000" ,volume:"6,311,996"},
+    {id:4 , label:"DIS" , price:"111.95" ,open:"111.44", bid:"0.00 x 900" ,volume:"7,242,396"},
+    {id:5 , label:"KO" , price:"59.53" ,open:"59.90", bid:"0.00 x 1800" ,volume:"10,927,564"},
+    {id:6 , label:"JNJ" , price:"162.12" ,open:"161.83", bid:"0.00 x 800" ,volume:"5,670,135"},
+    {id:7 , label:"V" , price:"283.16" ,open:"283.20", bid:"0.00 x 900" ,volume:"3,955,728"},
+    {id:8 , label:"WMT" , price:"58.76" ,open:"58.80", bid:"0.00 x 1200" ,volume:"19,030,919"},
+    {id:9 , label:"PG" , price:"158.85" ,open:"158.05", bid:"0.00 x 900" ,volume:"4,819,929"},
+    {id:10 , label:"IBM" , price:"188.20" ,open:"185.49", bid:"0.00 x 1200" ,volume:"4,018,354"},
+    {id:11 , label:"BAC" , price:"34.35" ,open:"34.53", bid:"0.00 x 3100" ,volume:"38,432,319"},
+    {id:12 , label:"XOM" , price:"105.84" ,open:"105.72", bid:"0.00 x 900" ,volume:"18,460,120"},
+    {id:13 , label:"CVX" , price:"152.81" ,open:"153.05", bid:"0.00 x 1200" ,volume:"7,459,056"},
+    {id:14 , label:"HD" , price:"384.45" ,open:"380.36", bid:"0.00 x 800" ,volume:"2,750,902"},
+    {id:15 , label:"MCD" , price:"290.73" ,open:"291.39", bid:"0.00 x 900" ,volume:"3,028,869"},
+]
 
 const columns = [
-  { id: "name", label: "Name", minWidth: 170 },
+  { id: "name", label: "Name", minWidth: 100 },
   { id: "code", label: "Last Price", minWidth: 100 },
-
   {
     id: "size",
-    label: "change",
-    minWidth: 170,
+    label: "Open",
+    minWidth: 100,
+    align: "right",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "size",
+    label: "Bid",
+    minWidth: 100,
+    align: "right",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "size",
+    label: "Change",
+    minWidth: 100,
+    align: "right",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+
+  {
+    id: "population",
+    label: "%Change",
+    minWidth: 100,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "population",
-    label: "%change",
-    minWidth: 170,
+    label: "Volume",
+    minWidth: 130,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
@@ -74,28 +108,7 @@ const rows = [
   createData("Brazil", "BR", 210147125, 8515767),
 ];
 
-export default function Forex () {
-  const [exchangeRates, setExchangeRates] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchExchangeRates = async () => {
-      try {
-        const response = await axios.get(
-          "https://open.er-api.com/v6/latest/USD"
-        );
-        setExchangeRates(response.data.rates);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching exchange rates:", error);
-      }
-    };
-
-    fetchExchangeRates();
-  }, []);
-
-  // Get the entries and select the first 10
-  const firstTenEntries = Object.entries(exchangeRates).slice(1, 16);
+export default function FWB () {
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -111,9 +124,7 @@ export default function Forex () {
 
   return (
     <>
-      {loading ? (
-        <CryptoLoading />
-      ) : (
+     
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
@@ -131,9 +142,9 @@ export default function Forex () {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {firstTenEntries
+                {fwbRows
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map(([currency, rate]) => {
+                  .map((row) => {
                     const randomNumber = generateRandomNumber();
                     const israndomNumberPositive = randomNumber >= 0;
                     const randomNumberPrecentage = israndomNumberPositive
@@ -144,12 +155,15 @@ export default function Forex () {
                         hover
                         role="checkbox"
                         tabIndex={-1}
-                        key={currency}
+                        key={row.id}
                       >
                         <TableCell>
-                          <Link to={`/gauge/${currency}`}>{currency}/USD</Link>
+                          <Link to={`/gauge/${row.label}`}>{row.label}</Link>
                         </TableCell>
-                        <TableCell>{rate}</TableCell>
+                        <TableCell >{row.price}</TableCell>
+                        <TableCell align="right" >{row.open}</TableCell>
+                        <TableCell align="right">{row.bid}</TableCell>
+                       
                         <TableCell align="right">
                           <span
                             style={{
@@ -169,8 +183,9 @@ export default function Forex () {
                             {randomNumberPrecentage}
                           </span>
                         </TableCell>
+                        <TableCell align="right">{row.volume}</TableCell>
                         <TableCell align="right">
-                          <ForexChart />
+                          <FWBChartChart/>
                         </TableCell>
                       </TableRow>
                     );
@@ -188,7 +203,7 @@ export default function Forex () {
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
         </Paper>
-      )}
+      
     </>
   );
 }

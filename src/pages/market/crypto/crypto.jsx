@@ -6,6 +6,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import TableHead from '@mui/material/TableHead';
 import CryptoLoading from "./cryptoLoading";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
@@ -115,7 +116,7 @@ export default function Crypto() {
         <Paper sx={{ width: "100%" ,overflow: "hidden" }}>
           <TableContainer sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
-              
+            <TableHead >
               
                 <TableRow>
                   {columns.map((column) => (
@@ -128,7 +129,7 @@ export default function Crypto() {
                     </TableCell>
                   ))}
                 </TableRow>
-              
+                </TableHead>
               <TableBody>
                 {marketData
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)

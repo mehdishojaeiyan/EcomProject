@@ -48,34 +48,64 @@ const {id} = useParams();
         <p className='h2 p-3 mt-5'>Dependencies</p>
         <div className="allGauge">
         <div className='gauge mb-4'>
-    <GaugeComponent
+        <GaugeComponent
   arc={{
     subArcs: [
       {
         limit: 20,
-        color: '#5BE12C',
+        color: '#EA4228',
         showTick: true
       },
       {
         limit: 40,
-        color: '#F5CD19',
-        showTick: true
-      },
-      {
-        limit: 60,
         color: '#F58B19',
         showTick: true
       },
       {
+        limit: 60,
+        color: '#F5CD19',
+        showTick: true
+      },
+      {
         limit: 100,
-        color: '#EA4228',
+        color: '#5BE12C',
         showTick: true
       },
     ]
   }}
   value={Math.floor(Math.random()*100)}
 />
-<p className="h2">oil</p>
+<p className="h2">Volume Growth</p>
+    </div>
+    <div className='gauge mb-4'>
+    <GaugeComponent
+  arc={{
+    subArcs: [
+      {
+        limit: 20,
+        color: '#EA4228',
+        showTick: true
+      },
+      {
+        limit: 40,
+        color: '#F58B19',
+        showTick: true
+      },
+      {
+        limit: 60,
+        color: '#F5CD19',
+        showTick: true
+      },
+      {
+        limit: 100,
+        color: '#5BE12C',
+        showTick: true
+      },
+    ]
+  }}
+  value={Math.floor(Math.random()*100)}
+/>
+<p className="h2">ESP Trend</p>
     </div>
     <div className='gauge'>
     <GaugeComponent
@@ -83,29 +113,29 @@ const {id} = useParams();
     subArcs: [
       {
         limit: 20,
-        color: '#5BE12C',
+        color: '#EA4228',
         showTick: true
       },
       {
         limit: 40,
-        color: '#F5CD19',
-        showTick: true
-      },
-      {
-        limit: 60,
         color: '#F58B19',
         showTick: true
       },
       {
+        limit: 60,
+        color: '#F5CD19',
+        showTick: true
+      },
+      {
         limit: 100,
-        color: '#EA4228',
+        color: '#5BE12C',
         showTick: true
       },
     ]
   }}
   value={Math.floor(Math.random()*100)}
 />
-<p className="h2">Gold</p>
+<p className="h2">Commodity Corr</p>
     </div>
     <div className='gauge'>
     <GaugeComponent
@@ -113,29 +143,29 @@ const {id} = useParams();
     subArcs: [
       {
         limit: 20,
-        color: '#5BE12C',
+        color: '#EA4228',
         showTick: true
       },
       {
         limit: 40,
-        color: '#F5CD19',
-        showTick: true
-      },
-      {
-        limit: 60,
         color: '#F58B19',
         showTick: true
       },
       {
+        limit: 60,
+        color: '#F5CD19',
+        showTick: true
+      },
+      {
         limit: 100,
-        color: '#EA4228',
+        color: '#5BE12C',
         showTick: true
       },
     ]
   }}
   value={Math.floor(Math.random()*100)}
 />
-<p className="h2">oil</p>
+<p className="h2">Month Average</p>
     </div>
     <div className='gauge'>
     <GaugeComponent
@@ -143,29 +173,29 @@ const {id} = useParams();
     subArcs: [
       {
         limit: 20,
-        color: '#5BE12C',
+        color: '#EA4228',
         showTick: true
       },
       {
         limit: 40,
-        color: '#F5CD19',
-        showTick: true
-      },
-      {
-        limit: 60,
         color: '#F58B19',
         showTick: true
       },
       {
+        limit: 60,
+        color: '#F5CD19',
+        showTick: true
+      },
+      {
         limit: 100,
-        color: '#EA4228',
+        color: '#5BE12C',
         showTick: true
       },
     ]
   }}
   value={Math.floor(Math.random()*100)}
 />
-<p className="h2">oil</p>
+<p className="h2">News</p>
     </div>
     <div className='gauge'>
     <GaugeComponent
@@ -173,29 +203,29 @@ const {id} = useParams();
     subArcs: [
       {
         limit: 20,
-        color: '#5BE12C',
+        color: '#EA4228',
         showTick: true
       },
       {
         limit: 40,
-        color: '#F5CD19',
-        showTick: true
-      },
-      {
-        limit: 60,
         color: '#F58B19',
         showTick: true
       },
       {
+        limit: 60,
+        color: '#F5CD19',
+        showTick: true
+      },
+      {
         limit: 100,
-        color: '#EA4228',
+        color: '#5BE12C',
         showTick: true
       },
     ]
   }}
   value={Math.floor(Math.random()*100)}
 />
-<p className="h2">oil</p>
+<p className="h2">Signal</p>
     </div>
     </div>
     
