@@ -20,21 +20,21 @@ const randomNumber = generateRandomNumber();
 
 
 const fwbRows =[ 
-    {id:1 , label:"AAPL" , price:"179.66 ",open:"179.55", bid:"0.00 x 900" ,volume:"73,563,082" },
-    {id:2 , label:"MSFT" , price:"415.50 ",open:"411.27", bid:"0.00 x 1300" ,volume:"17,823,445"},
-    {id:3 , label:"AMZN" , price:"178.22" ,open:"176.75", bid:"0.00 x 1000" ,volume:"6,311,996"},
-    {id:4 , label:"DIS" , price:"111.95" ,open:"111.44", bid:"0.00 x 900" ,volume:"7,242,396"},
-    {id:5 , label:"KO" , price:"59.53" ,open:"59.90", bid:"0.00 x 1800" ,volume:"10,927,564"},
-    {id:6 , label:"JNJ" , price:"162.12" ,open:"161.83", bid:"0.00 x 800" ,volume:"5,670,135"},
-    {id:7 , label:"V" , price:"283.16" ,open:"283.20", bid:"0.00 x 900" ,volume:"3,955,728"},
-    {id:8 , label:"WMT" , price:"58.76" ,open:"58.80", bid:"0.00 x 1200" ,volume:"19,030,919"},
-    {id:9 , label:"PG" , price:"158.85" ,open:"158.05", bid:"0.00 x 900" ,volume:"4,819,929"},
-    {id:10 , label:"IBM" , price:"188.20" ,open:"185.49", bid:"0.00 x 1200" ,volume:"4,018,354"},
-    {id:11 , label:"BAC" , price:"34.35" ,open:"34.53", bid:"0.00 x 3100" ,volume:"38,432,319"},
-    {id:12 , label:"XOM" , price:"105.84" ,open:"105.72", bid:"0.00 x 900" ,volume:"18,460,120"},
-    {id:13 , label:"CVX" , price:"152.81" ,open:"153.05", bid:"0.00 x 1200" ,volume:"7,459,056"},
-    {id:14 , label:"HD" , price:"384.45" ,open:"380.36", bid:"0.00 x 800" ,volume:"2,750,902"},
-    {id:15 , label:"MCD" , price:"290.73" ,open:"291.39", bid:"0.00 x 900" ,volume:"3,028,869"},
+    {id:1 , label:"DWNI" , price:"19.19 ",open:"19.19", bid:"18.97 x 0" ,volume:"101" },
+    {id:2 , label:"LHA" , price:"7.06 ",open:"7.16", bid:"7.05 x 948200" ,volume:"1,988,916"},
+    {id:3 , label:"DPWA" , price:"41.80" ,open:"41.80", bid:"41.80 x 6700" ,volume:"418"},
+    {id:4 , label:"EOAN" , price:"11.74" ,open:"11.86", bid:"11.74 x 130100" ,volume:"976,102"},
+    {id:5 , label:"RWE" , price:"30.61" ,open:"30.77", bid:"30.61 x 410300" ,volume:"1,585,812"},
+    {id:6 , label:"BMW" , price:"109.50" ,open:"109.44", bid:"109.48 x 0" ,volume:"207,017"},
+    {id:7 , label:"DBK" , price:"12.54" ,open:"12.56", bid:"12.55 x 555100" ,volume:"3,859,646"},
+    {id:8 , label:"SAP.DE" , price:"174.76" ,open:"174.62", bid:"174.72 x 76700" ,volume:"517,765"},
+    {id:9 , label:"BAS.DE" , price:"46.83" ,open:"47.95", bid:"46.81 x 139300" ,volume:"804,267"},
+    {id:10 , label:"ALV.DE" , price:"251.60" ,open:"252.00", bid:"251.55 x 214900" ,volume:"213,728"},
+    {id:11 , label:"BAYN.DE" , price:"28.10" ,open:"28.55", bid:"28.13 x 28400" ,volume:"2,290,094"},
+    {id:12 , label:"SIE.DE" , price:"181.54" ,open:"180.74", bid:"181.52 x 44200" ,volume:"342,727"},
+    {id:13 , label:"VOW3.DE" , price:"121.08" ,open:"119.72", bid:"121.04 x 207000" ,volume:"526,948"},
+    {id:14 , label:"HEN3.DE" , price:"68.00" ,open:"71.28", bid:"67.96 x 43400" ,volume:"1,042,228"},
+    {id:15 , label:"DTG.DE" , price:"42.99" ,open:"43.81", bid:"42.99 x N/A" ,volume:"1,227,429"},
 ]
 
 const columns = [

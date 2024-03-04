@@ -19,21 +19,21 @@ const randomNumber = generateRandomNumber();
 
 
 const lseRows =[ 
-    {id:1 , label:"AAPL" , price:"179.66 ",open:"179.55", bid:"0.00 x 900" ,volume:"73,563,082" },
-    {id:2 , label:"MSFT" , price:"415.50 ",open:"411.27", bid:"0.00 x 1300" ,volume:"17,823,445"},
-    {id:3 , label:"AMZN" , price:"178.22" ,open:"176.75", bid:"0.00 x 1000" ,volume:"6,311,996"},
-    {id:4 , label:"DIS" , price:"111.95" ,open:"111.44", bid:"0.00 x 900" ,volume:"7,242,396"},
-    {id:5 , label:"KO" , price:"59.53" ,open:"59.90", bid:"0.00 x 1800" ,volume:"10,927,564"},
-    {id:6 , label:"JNJ" , price:"162.12" ,open:"161.83", bid:"0.00 x 800" ,volume:"5,670,135"},
-    {id:7 , label:"V" , price:"283.16" ,open:"283.20", bid:"0.00 x 900" ,volume:"3,955,728"},
-    {id:8 , label:"WMT" , price:"58.76" ,open:"58.80", bid:"0.00 x 1200" ,volume:"19,030,919"},
-    {id:9 , label:"PG" , price:"158.85" ,open:"158.05", bid:"0.00 x 900" ,volume:"4,819,929"},
-    {id:10 , label:"IBM" , price:"188.20" ,open:"185.49", bid:"0.00 x 1200" ,volume:"4,018,354"},
-    {id:11 , label:"BAC" , price:"34.35" ,open:"34.53", bid:"0.00 x 3100" ,volume:"38,432,319"},
-    {id:12 , label:"XOM" , price:"105.84" ,open:"105.72", bid:"0.00 x 900" ,volume:"18,460,120"},
-    {id:13 , label:"CVX" , price:"152.81" ,open:"153.05", bid:"0.00 x 1200" ,volume:"7,459,056"},
-    {id:14 , label:"HD" , price:"384.45" ,open:"380.36", bid:"0.00 x 800" ,volume:"2,750,902"},
-    {id:15 , label:"MCD" , price:"290.73" ,open:"291.39", bid:"0.00 x 900" ,volume:"3,028,869"},
+    {id:1 , label:"PRU" , price:"108.01 ",open:"108.84", bid:"107.45 x 1000" ,volume:"1,361,470" },
+    {id:2 , label:"LLOY" , price:"2.3500 ",open:"2.3500", bid:"0.0000 x 317700" ,volume:"7,839,447"},
+    {id:3 , label:"BARC" , price:"8.66" ,open:"8.68", bid:"0.00 x 29200" ,volume:"15,269,996"},
+    {id:4 , label:"BHP" , price:"58.34" ,open:"57.86", bid:"57.92 x 800" ,volume:"2,713,772"},
+    {id:5 , label:"RIO" , price:"65.14" ,open:"64.60", bid:"64.56 x 1000" ,volume:"2,482,476"},
+    {id:6 , label:"VOD" , price:"9.08" ,open:"8.95", bid:"0.00 x 29200" ,volume:"9,214,295"},
+    {id:7 , label:"BATS" , price:"2,300.50" ,open:"2,326.50", bid:"2,300.00 x 0" ,volume:"1,187,666"},
+    {id:8 , label:"ULVR" , price:"3,863.00" ,open:"3,879.00", bid:"3,862.00 x 0" ,volume:"541,848"},
+    {id:9 , label:"DGE" , price:"2,933.50" ,open:"2,950.00", bid:"2,932.00 x 0" ,volume:"497,399"},
+    {id:10 , label:"AZN" , price:"64.60" ,open:"64.34", bid:"0.00 x 800" ,volume:"3,966,502"},
+    {id:11 , label:"GSK" , price:"42.03" ,open:"42.01", bid:"42.13 x 3200" ,volume:"2,324,675"},
+    {id:12 , label:"BP" , price:"35.64" ,open:"35.43", bid:"0.00 x 4000" ,volume:"7,269,386"},
+    {id:13 , label:"HSBA" , price:"606.30" ,open:"609.10", bid:"606.20 x 0" ,volume:"11,284,930"},
+    {id:14 , label:"LGEN" , price:"241.71" ,open:"242.30", bid:"241.60 x 0" ,volume:"2,958,137"},
+    {id:15 , label:"GLEN" , price:"380.65" ,open:"381.15", bid:"380.90 x 0" ,volume:"3,938,558"},
 ]
 
 const columns = [
