@@ -189,8 +189,8 @@ const Market = () => {
             <Coffee />
           </div>
           <div className="whatIsForex">
-            <div className="whatIsForexChild1">
-              <p className="h4 mt-3">The Red Sea attacks are creating chaos in the global coffee trade</p>
+            <div className="whatIsForexChild1 mt-5">
+              <p className="h4 p-1 mt-5">The Red Sea attacks are creating chaos in the global coffee trade</p>
               <img
                 className="mt-3"
                 src={coffee}
@@ -199,11 +199,11 @@ const Market = () => {
               />
 
               <div className="whatIsForexChild2">
-                <p className=" p-2" >
+                <p className=" p-2" style={{borderBottom:"1px solid gray"}}>
                   Buyers are turning down shipments from Vietnam that pass through the Red Sea, seeking supplies from Brazil instead, as prices of robusta coffee surge.
                 </p>
               </div>
-              <p className="h4 mt-3">Commodities round-up: Gold, wheat and oil prices gain</p>
+              <p className="h4 p-1 mt-3">Commodities round-up: Gold, wheat and oil prices gain</p>
               <img
                 className="mt-3"
                 src={wheat}

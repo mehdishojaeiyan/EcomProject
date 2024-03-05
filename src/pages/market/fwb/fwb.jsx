@@ -8,8 +8,8 @@ import TableRow from "@mui/material/TableRow";
 import TableHead from "@mui/material/TableHead";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import LSEChart from "./lseChart";
-import FWBChart from "./lseChart";
+import LSEChart from "./fwbChart";
+import FWBChart from "./fwbChart";
 
 const generateRandomNumber = () => {
   const randomNumber = (Math.random() * 2 - 1).toFixed(4);
@@ -185,7 +185,7 @@ export default function FWB () {
                         </TableCell>
                         <TableCell align="right">{row.volume}</TableCell>
                         <TableCell align="right">
-                          <FWBChartChart/>
+                          <FWBChart/>
                         </TableCell>
                       </TableRow>
                     );
