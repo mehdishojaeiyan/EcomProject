@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./gauge.css";
 import success from "../../assets/image/success-icon.png";
 import incorrect from "../../assets/image/incorrect-icon.png";
+import SwitchGauge from "./switchgauge";
 
 const Gauge = () => {
   const { id } = useParams();
@@ -198,39 +199,21 @@ const Gauge = () => {
         <div className="gaugeSwitch mt-5 mb-5">
           <div className="gaugeSwitchLbox">
             <div className="gaugeSwitchbox">
-            {Math.floor(Math.random() * 2 + 1) === 1 ? (<>
-                             <img style={{opacity:"0.3"}} src={success} alt="" />
-                             <img src={incorrect} alt="" />
-                             </>) : (<>
-                            <img  src={success} alt="" />
-                            <img style={{opacity:"0.3"}} src={incorrect} alt="" />
-                            </> )}
+            <SwitchGauge/>
              
             </div>
             <p className="mt-3 xup">X UP 1</p>
           </div>
           <div className="gaugeSwitchLbox">
             <div className="gaugeSwitchbox">
-            {Math.floor(Math.random() * 2 + 1) === 1 ? (<>
-                             <img style={{opacity:"0.3"}} src={success} alt="" />
-                             <img src={incorrect} alt="" />
-                             </>) : (<>
-                            <img  src={success} alt="" />
-                            <img style={{opacity:"0.3"}} src={incorrect} alt="" />
-                            </> )}
+            <SwitchGauge  size="small"/>
              
             </div>
             <p className="mt-3 xup">X UP 2</p>
           </div>
           <div className="gaugeSwitchLbox">
             <div className="gaugeSwitchbox">
-            {Math.floor(Math.random() * 2 + 1) === 1 ? (<>
-                             <img style={{opacity:"0.3"}} src={success} alt="" />
-                             <img src={incorrect} alt="" />
-                             </>) : (<>
-                            <img  src={success} alt="" />
-                            <img style={{opacity:"0.3"}} src={incorrect} alt="" />
-                            </> )}
+           <SwitchGauge/>
              
             </div>
             <p className="mt-3 xup">X UP 3</p>
