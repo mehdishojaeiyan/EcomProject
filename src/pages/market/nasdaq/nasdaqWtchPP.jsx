@@ -39,11 +39,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    {id:1 , label:"BRK.A" , price:"613,965.00 ",open:"617,727.19", bid:"0.00 x 900" ,volume:"14,548" },
-    {id:2 , label:"BA" , price:"200.00 ",open:"204.00", bid:"200.00 x 1000" ,volume:"11,609,465"},
-    {id:3 , label:"JPM" , price:"185.29" ,open:"185.70", bid:"0.00 x 900" ,volume:"6,311,996"},
-    {id:4 , label:"DIS" , price:"111.95" ,open:"111.44", bid:"0.00 x 900" ,volume:"7,242,396"},
-    {id:5 , label:"KO" , price:"59.53" ,open:"59.90", bid:"0.00 x 1800" ,volume:"10,927,564"},
+    {id:1 , label:"JD" , price:"21.88 " },
+    {id:2 , label:"CRMT" , price:"64.18 "},
+    {id:3 , label:"PTON" , price:"4.3500" },
+    {id:4 , label:"ABNB" , price:"158.09" },
+    {id:5 , label:"DASH" , price:"132.40" },
     
 ];
 
