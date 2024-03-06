@@ -31,6 +31,7 @@ import LseWtchPP from "./lse/lseWtchPP";
 import FwbWtchPP from "./fwb/fwbWtchPP";
 import coffee from "../../assets/image/coffee.jpg";
 import wheat from "../../assets/image/wheat.jpg";
+import FWB from "./fwb/fwb";
 
 const Market = () => {
   const [marketData, setMarketData] = useState([]);
@@ -268,7 +269,7 @@ const Market = () => {
           FWB
         </h1>
         <div className="mainCrypto">
-          <LSE />
+          <FWB />
           <div className="  whatIsCrypto">
             <div className="whatIsCryptoChild1">
               <p className="h4 mt-2">People Also Watch</p>

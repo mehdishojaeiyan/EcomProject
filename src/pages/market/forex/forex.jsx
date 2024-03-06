@@ -147,7 +147,7 @@ export default function Forex () {
                         key={currency}
                       >
                         <TableCell>
-                          <Link to={`/gauge/${currency}`}>{currency}/USD</Link>
+                          <Link to={`/gauge?data=${encodeURIComponent(JSON.stringify([currency, rate]))}`}>{currency}/USD</Link>
                         </TableCell>
                         <TableCell>{rate}</TableCell>
                         <TableCell align="right">

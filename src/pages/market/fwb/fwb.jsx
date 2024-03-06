@@ -20,21 +20,21 @@ const randomNumber = generateRandomNumber();
 
 
 const fwbRows =[ 
-    {id:1 , label:"DWNI" , price:"19.19 ",open:"19.19", bid:"18.97 x 0" ,volume:"101" },
-    {id:2 , label:"LHA" , price:"7.06 ",open:"7.16", bid:"7.05 x 948200" ,volume:"1,988,916"},
-    {id:3 , label:"DPWA" , price:"41.80" ,open:"41.80", bid:"41.80 x 6700" ,volume:"418"},
-    {id:4 , label:"EOAN" , price:"11.74" ,open:"11.86", bid:"11.74 x 130100" ,volume:"976,102"},
-    {id:5 , label:"RWE" , price:"30.61" ,open:"30.77", bid:"30.61 x 410300" ,volume:"1,585,812"},
-    {id:6 , label:"BMW" , price:"109.50" ,open:"109.44", bid:"109.48 x 0" ,volume:"207,017"},
-    {id:7 , label:"DBK" , price:"12.54" ,open:"12.56", bid:"12.55 x 555100" ,volume:"3,859,646"},
-    {id:8 , label:"SAP.DE" , price:"174.76" ,open:"174.62", bid:"174.72 x 76700" ,volume:"517,765"},
-    {id:9 , label:"BAS.DE" , price:"46.83" ,open:"47.95", bid:"46.81 x 139300" ,volume:"804,267"},
-    {id:10 , label:"ALV.DE" , price:"251.60" ,open:"252.00", bid:"251.55 x 214900" ,volume:"213,728"},
-    {id:11 , label:"BAYN.DE" , price:"28.10" ,open:"28.55", bid:"28.13 x 28400" ,volume:"2,290,094"},
-    {id:12 , label:"SIE.DE" , price:"181.54" ,open:"180.74", bid:"181.52 x 44200" ,volume:"342,727"},
-    {id:13 , label:"VOW3.DE" , price:"121.08" ,open:"119.72", bid:"121.04 x 207000" ,volume:"526,948"},
-    {id:14 , label:"HEN3.DE" , price:"68.00" ,open:"71.28", bid:"67.96 x 43400" ,volume:"1,042,228"},
-    {id:15 , label:"DTG.DE" , price:"42.99" ,open:"43.81", bid:"42.99 x N/A" ,volume:"1,227,429"},
+    {id:1 , name:"DWNI" , current_price:"19.19 ",open:"19.19", bid:"18.97 x 0" ,volume:"101" },
+    {id:2 , name:"LHA" , current_price:"7.06 ",open:"7.16", bid:"7.05 x 948200" ,volume:"1,988,916"},
+    {id:3 , name:"DPWA" , current_price:"41.80" ,open:"41.80", bid:"41.80 x 6700" ,volume:"418"},
+    {id:4 , name:"EOAN" , current_price:"11.74" ,open:"11.86", bid:"11.74 x 130100" ,volume:"976,102"},
+    {id:5 , name:"RWE" , current_price:"30.61" ,open:"30.77", bid:"30.61 x 410300" ,volume:"1,585,812"},
+    {id:6 , name:"BMW" , current_price:"109.50" ,open:"109.44", bid:"109.48 x 0" ,volume:"207,017"},
+    {id:7 , name:"DBK" , current_price:"12.54" ,open:"12.56", bid:"12.55 x 555100" ,volume:"3,859,646"},
+    {id:8 , name:"SAP.DE" , current_price:"174.76" ,open:"174.62", bid:"174.72 x 76700" ,volume:"517,765"},
+    {id:9 , name:"BAS.DE" , current_price:"46.83" ,open:"47.95", bid:"46.81 x 139300" ,volume:"804,267"},
+    {id:10 , name:"ALV.DE" , current_price:"251.60" ,open:"252.00", bid:"251.55 x 214900" ,volume:"213,728"},
+    {id:11 , name:"BAYN.DE" , current_price:"28.10" ,open:"28.55", bid:"28.13 x 28400" ,volume:"2,290,094"},
+    {id:12 , name:"SIE.DE" , current_price:"181.54" ,open:"180.74", bid:"181.52 x 44200" ,volume:"342,727"},
+    {id:13 , name:"VOW3.DE" , current_price:"121.08" ,open:"119.72", bid:"121.04 x 207000" ,volume:"526,948"},
+    {id:14 , name:"HEN3.DE" , current_price:"68.00" ,open:"71.28", bid:"67.96 x 43400" ,volume:"1,042,228"},
+    {id:15 , name:"DTG.DE" , current_price:"42.99" ,open:"43.81", bid:"42.99 x N/A" ,volume:"1,227,429"},
 ]
 
 const columns = [
@@ -144,7 +144,7 @@ export default function FWB () {
               <TableBody>
                 {fwbRows
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row) => {
+                  .map((row) => { console.log(row)
                     const randomNumber = generateRandomNumber();
                     const israndomNumberPositive = randomNumber >= 0;
                     const randomNumberPrecentage = israndomNumberPositive
@@ -158,7 +158,7 @@ export default function FWB () {
                         key={row.id}
                       >
                         <TableCell>
-                          <Link to={`/gauge/${row.label}`}>{row.label}</Link>
+                          <Link to={`/gauge?data=${encodeURIComponent(JSON.stringify(row))}`}>{row.name}</Link>
                         </TableCell>
                         <TableCell >{row.price}</TableCell>
                         <TableCell align="right" >{row.open}</TableCell>
