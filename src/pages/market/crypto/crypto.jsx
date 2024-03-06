@@ -204,7 +204,7 @@ const columns = [
   { id: "code", label: "Symbol", minWidth: 100 },
   {
     id: "population",
-    label: "Current Price(USD)",
+    label: "Last Price(USD)",
     minWidth: 170,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
@@ -328,7 +328,7 @@ export default function Crypto() {
                         key={currency.id}
                       >
                         <TableCell>
-                          <Link to={`/gauge?data=${encodeURIComponent(JSON.stringify(currency))}`}>
+                          <Link to={`/cryptoGauge?data=${encodeURIComponent(JSON.stringify(currency))}`}>
                             {currency.name}{" "}
                           </Link>
                         </TableCell>

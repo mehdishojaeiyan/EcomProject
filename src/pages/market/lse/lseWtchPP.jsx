@@ -39,11 +39,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    {id:1 , label:"FERG.L" , price:"17,040.00 " },
-    {id:2 , label:"EXPN.L" , price:"3,349.00 "},
-    {id:3 , label:"RR.L" , price:"376.40" },
-    {id:4 , label:"IAG.L" , price:"142.72" },
-    {id:5 , label:"ABF.L" , price:"2,250.00" },
+    {id:1 , label:"FERG.L" , price:"17,040.00 " ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:2 , label:"EXPN.L" , price:"3,349.00 " ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:3 , label:"RR.L" , price:"376.40" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:4 , label:"IAG.L" , price:"142.72" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:5 , label:"ABF.L" , price:"2,250.00" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
     
 ];
 
@@ -70,7 +70,7 @@ export default function LseWtchPP() {
           return(
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-              <Link to={`/gauge/${row.label}`}>{row.label}</Link>
+              <Link to={`/stockGauge?data=${encodeURIComponent(JSON.stringify(row))}`}>{row.label}</Link>
               </StyledTableCell>
               <StyledTableCell align="right">{row.price}</StyledTableCell>
               <TableCell align="right">

@@ -39,11 +39,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    {id:1 , label:"JD" , price:"21.88 " },
-    {id:2 , label:"CRMT" , price:"64.18 "},
-    {id:3 , label:"PTON" , price:"4.3500" },
-    {id:4 , label:"ABNB" , price:"158.09" },
-    {id:5 , label:"DASH" , price:"132.40" },
+    {id:1 , label:"JD" , price:"21.88 " ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:2 , label:"CRMT" , price:"64.18 ",open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:3 , label:"PTON" , price:"4.3500" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:4 , label:"ABNB" , price:"158.09" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:5 , label:"DASH" , price:"132.40" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
     
 ];
 
@@ -70,7 +70,7 @@ export default function NasdaqWtchPP() {
           return(
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-              <Link to={`/gauge/${row.label}`}>{row.label}</Link>
+              <Link to={`/stockGauge?data=${encodeURIComponent(JSON.stringify(row))}`}>{row.label}</Link>
               </StyledTableCell>
               <StyledTableCell align="right">{row.price}</StyledTableCell>
               <TableCell align="right">

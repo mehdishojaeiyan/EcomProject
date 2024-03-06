@@ -39,11 +39,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    {id:1 , label:"DHER.DE" , price:"22.55 " },
-    {id:2 , label:"PBB.DE" , price:"3.8140 "},
-    {id:3 , label:"FME.DE" , price:"34.18" },
-    {id:4 , label:"MRK.DE" , price:"157.65" },
-    {id:5 , label:"1COV.DE" , price:"48.83" },
+    {id:1 , label:"DHER.DE" , price:"22.55 " ,open:"19.19", bid:"18.97 x 0" ,volume:"101" },
+    {id:2 , label:"PBB.DE" , price:"3.8140 " ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:3 , label:"FME.DE" , price:"34.18" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:4 , label:"MRK.DE" , price:"157.65" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
+    {id:5 , label:"1COV.DE" , price:"48.83" ,open:"19.19", bid:"18.97 x 0" ,volume:"101"},
     
 ];
 
@@ -70,7 +70,7 @@ export default function FwbWtchPP() {
           return(
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-              <Link to={`/gauge/${row.label}`}>{row.label}</Link>
+              <Link to={`/stockGauge?data=${encodeURIComponent(JSON.stringify(row))}`}>{row.label}</Link>
               </StyledTableCell>
               <StyledTableCell align="right">{row.price}</StyledTableCell>
               <TableCell align="right">

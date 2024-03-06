@@ -156,7 +156,7 @@ const Market = () => {
           <a href="forexExchengeRates">View All</a>
         </p>
         
-        <h1 style={{ fontSize: "4em" }} className="mt-5 p-4" id="#Commodities">
+        <h1 style={{ fontSize: "4em" }} className="mt-5 p-4" id="Commodities">
           Commoodities
         </h1>
         <div className="mainForex">

@@ -79,6 +79,7 @@ const AllForex = () => {
       try {
         const response = await axios.get('https://open.er-api.com/v6/latest/USD');
         setExchangeRates((prev) => ({ ...prev, rates: response.data.rates }));
+        console.log(response)
       } catch (error) {
         console.error('Error fetching exchange rates:', error);
       }

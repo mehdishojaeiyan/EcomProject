@@ -157,7 +157,7 @@ export default function NYSE () {
                         key={row.id}
                       >
                         <TableCell>
-                          <Link to={`/gauge/${row.label}`}>{row.label}</Link>
+                          <Link to={`/stockGauge?data=${encodeURIComponent(JSON.stringify(row))}`}>{row.label}</Link>
                         </TableCell>
                         <TableCell >{row.price}</TableCell>
                         <TableCell align="right" >{row.open}</TableCell>
