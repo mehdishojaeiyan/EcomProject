@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import CommoditesChart from "./commoditesChart";
+
 
 const CrudeOilWTI = () => {
-  const [stockData, setStockData] = useState({});
+  const [stockData, setStockData] = useState({   label: [],
+    unit: [],
+    price: [],
+    open: [],
+    bid: [],
+    volume: [],});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,7 +19,12 @@ const CrudeOilWTI = () => {
         const response = await axios.get(
           "https://www.alphavantage.co/query?function=WTI&interval=monthly&apikey=demo"
         );
-        setStockData(response.data);
+        setStockData({ label: response.data.name,
+          unit: response.data.unit,
+          price: response.data.data[0].value,
+          open: "78.32",
+          bid:"79.77",
+          volume: "89,881",});
 
         setLoading(false);
       } catch (error) {
@@ -31,20 +43,24 @@ const CrudeOilWTI = () => {
       ) : (
         <div>
           <p
-            className="p-4 "
+            className="p-2 "
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(6,1fr)",
-              borderBottom: "1px solid gray",
-              backgroundColor: "#e9e9e9",
+              gridTemplateColumns: "repeat(7,1fr)",
+              alignItems:'center',
+              borderBottom: "1px solid #c9c9c9",
+              backgroundColor: "#f7f7f7",
             }}
           >
-            <Link to={`/gauge/${stockData.name}`}>Crude Oil WTI</Link>
+            <Link to={`/stockGauge?data=${encodeURIComponent(
+                JSON.stringify(stockData)
+              )}`}>Crude Oil WTI</Link>
             <span>{stockData.unit}</span>
-            <span>{stockData.data[0].value}</span>
-            <span>78.32</span>
-            <span>79.77</span>
-            <span>89,881</span>
+            <span>{Number(stockData.price).toFixed(2)}</span>
+            <span>{stockData.open}</span>
+            <span>{stockData.bid}</span>
+            <span>{stockData.volume}</span>
+            <span><CommoditesChart/></span>
           </p>
         </div>
       )}

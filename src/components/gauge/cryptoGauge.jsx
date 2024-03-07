@@ -15,7 +15,7 @@ const CryptoGauge = () => {
   return (
     <>
       <div className="gaugeBigbox p-5">
-        <h2 style={{ fontSize: "3em" }}>{data.name} </h2>
+        <h2 style={{ fontSize: "3em" }}>{data.name} <span>({data.symbol})</span> </h2>
         <span style={{ fontSize: "3em", fontWeight: "bolder" }}>
           {data.current_price}{" "}
         </span>

@@ -17,7 +17,7 @@ const FurtherInfo = () => {
       return <p>کاربر پیدا نشد!</p>;
     }
     return ( <>
-    <div className="further">
+    <div className="further mt-3">
         <div className="furtherBox">
             <span>Trades</span><span>{currentUser.trades}</span>
         <span className="mt-3 mb-2">Profit</span><span>{currentUser.profit}</span></div>

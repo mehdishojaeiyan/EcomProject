@@ -40,12 +40,12 @@ function NavBar() {
             >
               <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
               <NavDropdown.Item href="/gauge">
-              gauge
+              Calendar
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Simulation</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Separated link
+                Pricing
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className="item-menu" href="/community">

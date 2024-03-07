@@ -4,10 +4,7 @@ import axios from "axios";
 import MArketLoading from "./crypto/cryptoLoading";
 import "./market.css";
 import Forex from "./forex/forex";
-import fxLogo from "../../assets/image/FX_logo.png";
-import cryptoLogo from "../../assets/image/cryptoLogo.png";
 import Crypto from "./crypto/crypto";
-import Test from "../../components/test/test";
 import CrudeOilWTI from "./commodities/crudeOilWTI";
 import CrudeOilBrent from "./commodities/crudeOilBrent";
 import NaturalGas from "./commodities/naturalGas";
@@ -159,14 +156,14 @@ const Market = () => {
         <h1 style={{ fontSize: "4em" }} className="mt-5 p-4" id="Commodities">
           Commoodities
         </h1>
-        <div className="mainForex">
-          <div className="mt-3">
+        <div className="mainForex p-2">
+          <div className="mt-3 " style={{boxShadow:'2px 3px 3px 3px #f5f5f5' , border:'1px solid #e1e1e1'}}>
             <div>
               <p
-                className="p-4 h4"
+                className="p-4 h6"
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(6,1fr)",
+                  gridTemplateColumns: "repeat(7,1fr)",
                   borderBottom: "1px solid gray",
                 }}
               >
@@ -176,6 +173,7 @@ const Market = () => {
                 <span>Open</span>
                 <span>Bid</span>
                 <span>Volume</span>
+                <span>Day Chart</span>
               </p>
             </div>
             <CrudeOilWTI />
@@ -189,6 +187,7 @@ const Market = () => {
             <Sugar />
             <Coffee />
           </div>
+          
           <div className="whatIsForex">
             <div className="whatIsForexChild1 mt-5">
               <p className="h4 p-1 mt-5">The Red Sea attacks are creating chaos in the global coffee trade</p>

@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import CommoditesChart from "./commoditesChart";
 
 const CrudeOilBrent = () => {
-  const [stockData, setStockData] = useState({});
+  const [stockData, setStockData] = useState({   label: [],
+    unit: [],
+    price: [],
+    open: [],
+    bid: [],
+    volume: [],});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,7 +18,12 @@ const CrudeOilBrent = () => {
         const response = await axios.get(
           "https://www.alphavantage.co/query?function=BRENT&interval=monthly&apikey=demo"
         );
-        setStockData(response.data);
+        setStockData({ label: response.data.name,
+          unit: response.data.unit,
+          price: response.data.data[0].value,
+          open: "81.97",
+          bid:"81.43",
+          volume: "30,577",});
 
         setLoading(false);
       } catch (error) {
@@ -31,19 +42,23 @@ const CrudeOilBrent = () => {
       ) : (
         <div>
           <p
-            className="p-4"
+            className="p-2"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(6,1fr)",
-              borderBottom: "1px solid gray",
+              gridTemplateColumns: "repeat(7,1fr)",
+              alignItems:'center',
+              borderBottom: "1px solid #c9c9c9",
             }}
           >
-            <Link to={`/gauge/${stockData.name}`}>Crude Oil Brent</Link>
+            <Link to={`/stockGauge?data=${encodeURIComponent(
+                JSON.stringify(stockData)
+              )}`}>Crude Oil Brent</Link>
             <span>{stockData.unit}</span>
-            <span>{stockData.data[0].value}</span>
-            <span>81.97</span>
-            <span>81.43</span>
-            <span>30,577</span>
+            <span>{Number(stockData.price).toFixed(2)}</span>
+            <span>{stockData.open}</span>
+            <span>{stockData.bid}</span>
+            <span>{stockData.volume}</span>
+            <span><CommoditesChart/></span>
           </p>
         </div>
       )}
