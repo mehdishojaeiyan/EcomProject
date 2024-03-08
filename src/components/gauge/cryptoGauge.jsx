@@ -244,13 +244,13 @@ const CryptoGauge = () => {
         <div className="gaugeSwitch mt-5 mb-5">
           <div className="gaugeSwitchLbox">
             <div className="gaugeSwitchbox">
-              <SwitchGauge />
+              <SwitchGauge defaultChecked />
             </div>
             <p className="mt-3 xup">X UP 1</p>
           </div>
           <div className="gaugeSwitchLbox">
             <div className="gaugeSwitchbox">
-              <SwitchGauge size="small" />
+              <SwitchGauge />
             </div>
             <p className="mt-3 xup">X UP 2</p>
           </div>

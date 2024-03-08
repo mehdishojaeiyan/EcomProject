@@ -7,7 +7,6 @@ import "./watchList.css";
 import { ClassNames } from "@emotion/react";
 import { Icon } from "semantic-ui-react";
 
-
 const WatchList = () => {
   const [watchList, setWatchList] = useState([]);
   const leaderContext = useContext(LeaderContext);
@@ -23,10 +22,7 @@ const WatchList = () => {
     localStorage.setItem("watchList", JSON.stringify(updatedWatchList));
   };
 
-
-
   // localStorage.removeItem('watchList')
-
 
   return (
     <>
@@ -49,13 +45,11 @@ const WatchList = () => {
               </div>
               <div>
                 <button
-
-                  className="btn btn-outline-warning btn-sm "
+                  className="btn   btn-sm "
                   onClick={() => removeFromWatchList(user.id)}
                 >
-                 <Icon  name="delete " /> 
-                 {/* window minimize */}
-
+                  <Icon name="delete " color="violet" />
+                  {/* window minimize */}
                 </button>
               </div>
             </div>

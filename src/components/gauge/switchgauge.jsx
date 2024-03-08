@@ -61,9 +61,10 @@ export default function SwitchGauge() {
       <FormControlLabel
         disabled
         
-        control={<IOSSwitch  sx={{ m: 3 }} defaultChecked />}
+        control={<IOSSwitch   sx={{ m: 3 }} defaultChecked />}
         label=""
       />
+      
     </FormGroup>
   );
 }

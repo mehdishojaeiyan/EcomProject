@@ -132,7 +132,7 @@ class App extends Component {
       },
       {
         id: 3,
-        name: "Bob Smith",
+        name: "Alice Johnson ",
         avatar: avatar3,
         risk: 7,
         winRate: "75.12%",
@@ -176,7 +176,7 @@ class App extends Component {
       },
       {
         id: 4,
-        name: "Alice Johnson",
+        name: "Bob Smith",
         avatar: avatar4,
         risk: 4,
         winRate: "75.12%",
@@ -220,7 +220,7 @@ class App extends Component {
       },
       {
         id: 5,
-        name: "Charlie Brown",
+        name: "Eva White",
         avatar: avatar5,
         risk: 4,
         winRate: "75.12%",
@@ -264,7 +264,7 @@ class App extends Component {
       },
       {
         id: 6,
-        name: "Eva White",
+        name: "Charlie Brown",
         avatar: avatar6,
         risk: 4,
         winRate: "75.12%",
@@ -352,7 +352,7 @@ class App extends Component {
       },
       {
         id: 8,
-        name: "Linda Green",
+        name: "Daniel Green",
         avatar: avatar8,
         risk: 4,
         winRate: "75.12%",
@@ -572,7 +572,7 @@ class App extends Component {
       },
       {
         id: 13,
-        name: "Daniel Wilson",
+        name: "Mia Brown",
         avatar: avatar13,
         risk: 4,
         winRate: "75.12%",
@@ -616,7 +616,7 @@ class App extends Component {
       },
       {
         id: 14,
-        name: "Mia Brown",
+        name: "Daniel Wilson ",
         avatar: avatar14,
         risk: 4,
         winRate: "75.12%",

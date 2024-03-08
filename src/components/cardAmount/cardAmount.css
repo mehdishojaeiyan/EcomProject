@@ -43,13 +43,14 @@
   } */
   .iconBtn {
     border-radius: 50%;
-    background-color: #4d4c7d;
+    /* background-color: #4d4c7d; */
     border: 2px solid #363062;
     width: 30px;
     height: 30px;
   }
   #iconCard {
-    color: #f99417;
+    /* color: #f99417; */
+    color: #fff;
   }
   .sizeBtn {
     width: auto;
