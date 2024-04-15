@@ -50,12 +50,7 @@ const ForexGauge = () => {
           <div className="mt-5">
             <GaugeChart />
           </div>
-          {/* <div className="mt-2 p-5">
-          <p className="currencyInfoPTag p-1"><span>high</span> <span>{data.high_24h}</span></p>
-          <p className="currencyInfoPTag p-1"><span>low</span><span>{data.low_24h}</span></p>
-          <p className="currencyInfoPTag p-1"><span>Market Cap</span><span>{data.market_cap}</span></p>
-          <p className="currencyInfoPTag p-1"><span>Volume</span><span>{data.total_volume}</span></p>
-        </div> */}
+          
         </div>
         <p className="h2 p-3 mt-5">Metric</p>
         <div className="allGauge mb-5">

@@ -1,18 +1,21 @@
 .test {
   color: #363062 #4d4c7d #f99417 #f5f5f5 #16ff00 #12ad04;
 }
+.colors{
+  color: #040D12 rgb(4, 13, 18) #183D3D rgb(24, 61, 61) #5C8374 rgb(92, 131, 116) #93B1A6 rgb(147, 177, 166);
+}
 .generalPart {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 210px;
   /* height: 300px; */
   height: 280px;
-  border: 2px solid #363062;
+  border: 2px solid #183D3D;
   border-radius: 20px;
   background-color: #f5f5f5;
-  color: #363062;
+  color: #183D3D;
   align-items: center;
-  box-shadow: 5px 5px 5px  #4d4c7d;
+  box-shadow: 5px 5px 5px  #5C8374;
   /* background-image: radial-gradient(#f5f5f5, #4d4c7d); */
   overflow: hidden;
 }
@@ -23,7 +26,7 @@
   /* margin: 8px; */
 }
 .risk {
-  background-color: #363062;
+  background-color: #183D3D;
   /* padding-left: 10px; */
   /* padding-right: 10px; */
   padding: 5px 10px;
@@ -44,7 +47,7 @@
   justify-content: center;
 }
 .namePersonalCard{
-  color: #363062;
+  color: #183D3D;
  
  
   
@@ -71,12 +74,12 @@
   box-shadow: 2px 2px 2px #737373;
 }
 #star {
-  color: #363062;
+  color: #183D3D;
   margin-right: auto;
 }
 #star:hover {
   /* background-color: #363062; */
-  color: #f99417;
+  color: #93B1A6;
   /* border-radius: 50%; */
 }
 #cardCopiers{

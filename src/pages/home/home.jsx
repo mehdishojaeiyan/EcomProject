@@ -1,8 +1,8 @@
 import "./home.css";
 import React, { useEffect, useState, useRef } from "react";
-import homeTrade from "../../assets/image/homeTrade2.jpeg";
+import homeTrade from "../../assets/image/homeTrade2.jpg";
 import roadImg from "../../assets/image/img4.png";
-import community from "../../assets/image/community.png";
+import community from "../../assets/image/community3.jpg";
 import mail from "../../assets/image/mail.jpg";
 import telePhone from "../../assets/image/telSupport.jpg";
 import chatbox from "../../assets/image/chatBox.jpg";
@@ -100,21 +100,13 @@ const Home = () => {
     <>
       <div className="homeContainer ">
         <div className="headHome p-5  mb-3">
-          <div className="sloganDivImg mt-3">
-            <img
-              className="sloganImg"
-              src={homeTrade}
-              alt=""
-              onMouseEnter={onEnter}
-              onMouseLeave={onLeave}
-            />
-          </div>
+         
           <div className="sloganH1">
             {" "}
-            <h2 className="h1 mt-4">Smart Trading Starts Here!</h2>
+            <h2 className="h1 ">Smart Trading Starts Here!</h2>
             <h2 className="h3">Choose Your Strategy, Trade Like a Pro!</h2>
             <Button
-                color="violet"
+                color="teal"
                 size='huge'
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
@@ -130,16 +122,16 @@ const Home = () => {
               <p className="h2 mt-4">Follow me.</p>
             </p>
             <div className="roadTextDiv " ref={mainRoad}>
-              <p className="h3  roadText mb-5 pb-5">
+              <p className="h4  roadText mb-5 pb-5">
                 1. First, you need to create an account.
               </p>
-              <p className="h3 roadText mb-5 pb-5">
+              <p className="h4 roadText mb-5 pb-5">
                 2. In the next step, you should follow leaders and strategies.
               </p>
-              <p className="h3 roadText mb-5 pb-5">
+              <p className="h4 roadText mb-5 pb-5">
                 3. We provide you with credit to trade and gain experience.
               </p>
-              <p className="h3 roadText mb-5 pb-5">
+              <p className="h4 roadText mb-5 pb-5">
                 4. Now you can trade with your own money and make profits.
               </p>
             </div>
@@ -151,19 +143,19 @@ const Home = () => {
             </div>
           
         </div>
-        <div className="joinCommunity mt-5 mb-5 p-5">
-          <div className="communityImg">
-            <img src={community} className="communityImg" />
+        <div className="joinCommunity mt-5  p-5">
+          <div >
+            <img src={community} className="communityImg mt-5" />
           </div>
           <div className="commucontent">
             <p className="h1">Join our great community</p>
-            <p className="h2">
+            <p className="h4">
               Register and join our huge community with thousands of traders
               from all over the world.
             </p>
             <div className="mt-4">
               <Button
-                color="violet"
+                color="teal"
                 size='huge'
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
@@ -173,11 +165,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="whyEcom mt-5">
+        <div className="whyEcom mt-3">
           <main ref={main}>
-            <section className="description panel  ">
+            <section className=" panel  ">
               <div>
-                <p className="h1">Why Ecom</p>
+                <p className="h1 mt-5">Why Ecom</p>
                 <p className="h2">
                   We have tried to provide facilities so that you can have the
                   best choices by receiving the best services.
@@ -216,6 +208,7 @@ const Home = () => {
                   <div className="whyBox supchat ">
                     {" "}
                     <Card
+                    
                       image={telePhone}
                       header="Call"
                       description="Our call center will answer your call."

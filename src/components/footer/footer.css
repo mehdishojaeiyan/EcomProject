@@ -1,27 +1,14 @@
 .test {
   color: #363062 #4d4c7d #f99417 #f5f5f5 #16ff00;
 }
-.alaki {
-  height: 500px;
+.colors{
+  color: #040D12 rgb(4, 13, 18) #183D3D rgb(24, 61, 61) #5C8374 rgb(92, 131, 116) #93B1A6 rgb(147, 177, 166);
 }
-/* .alaki {
-  height: 500px;
-}
-.containerFluid {
-  background-color: #363062;
-}
-.containerFooter {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  color: #f5f5f5;
-}
-.legal {
-  grid-template-rows: repeat(3, 1fr);
-  color: #f5f5f5;
-} */
+
+
 #footer-main {
-  background-color: #363062;
-  border-top: 3px solid #f99417;
+  background-color: #183d3d;
+  border-top: 3px solid #D89216;
   padding: 60px;
 }
 
@@ -42,26 +29,9 @@
   }
 }
 
-/* --------------------------
----------- Colour styles ----------- 
----------------------------*/
 
-/* .section .footer-1 {
-  padding-bottom: 20px;
-}
-
-.section .footer-2 {
-  padding-bottom: 20px;
-}
-
-.section .footer-3 {
-  padding-bottom: 20px;
-}
-.section .footer-4 {
-  padding-bottom: 20px;
-} */
 #EcomFooter::first-letter {
-  color: #f99417;
+  color: #D89216;
 }
 #EcomFooter {
   font-size: xx-large;
@@ -81,13 +51,13 @@
 
 section >h4 {
   font-size: large;
-  /* color: #4d4c7d; */
+  
 }
 .footerA >div a:hover {
-  background-color: #f99417;
+  
   border-radius: 20px;
   padding: 5px;
 }
 #IconFont {
-  color: #f99417;
+  color: #D89216;
 }

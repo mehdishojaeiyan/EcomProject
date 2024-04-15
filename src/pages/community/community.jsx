@@ -531,18 +531,13 @@ const Community = ({ name, avatar }) => {
             ))}
             <div>
               {inputError && <div className="error-message">{inputError}</div>}
-              {/* <input
-                type="text"
-                placeholder="Enter new text"
-                value={newFeed}
-                onChange={(e) => setNewFeed(e.target.value)}
-              /> */}
+              
               <input
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleImageUpload(e)}
               />
-              {/* <button onClick={handleAddNewFeed}>Send</button> */}
+              
             
             <InputGroup className="mb-3">
         <Form.Control

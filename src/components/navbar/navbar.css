@@ -1,9 +1,15 @@
+
 .test {
   color: #363062 #4d4c7d #f99417 #f5f5f5 #16ff00;
 }
-#ecom::first-letter {
-  color: #f99417;
+.colors{
+  color: #040D12 rgb(4, 13, 18) #183D3D rgb(24, 61, 61) #5C8374 rgb(92, 131, 116) #93B1A6 rgb(147, 177, 166);
 }
+#ecom::first-letter {
+  color: #D89216;
+}
+
+
 
 #ecom {
   font-size: xx-large;
@@ -19,40 +25,56 @@
   animation: flip; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 1s;
 }
-
+.navContainer {
+  margin-top: 0 !important;
+}
 .menu {
-  background-color: #363062 !important;
+  background-color: #183d3d !important;
+
   display: flex;
   justify-content: space-around;
   /* color: #F5F5F5 !important; */
 }
 .item-menu {
   color: #f5f5f5 !important;
-  border-radius:20px ;
+  border-radius: 20px;
 }
 .item-menu:hover {
   /* background-color: #f99417; */
-  border: 1px solid  #f99417;
-  background-color: #4d4c7d;
+
+  background-color: #93b1a6;
   border-radius: 20px;
   /* padding: 2px; */
 }
 #basic-nav-dropdown {
   color: #f5f5f5;
 }
-.login:hover {
-  background-color: #f99417;
-  color: #f5f5f5;
-  padding: 5px 23px;
+.loginBtn:hover {
+  color: #fff;
+  padding: 5px 21px;
   border-radius: 50px;
-  border: 3px solid #4d4c7d;
+  border: 3px solid #93b1a6;
 }
-.login {
-  background-color: #4d4c7d;
+.loginBtn {
+  background-color: #5c8374;
   color: #f5f5f5;
   padding: 5px 23px;
   border-radius: 50px;
-  border: 2px solid #f99417;
+  border: 1px solid #5c8374;
+}
+.signUpBtn{
+  background-color: #5c8374;
+  color: #f5f5f5;
+  padding: 5px 18px;
+  border-radius: 50px;
+  border: 1px solid #5c8374;
+  margin-right: 3px;
+}
+.signUpBtn:hover{
+  color: #fff;
+  padding: 5px 16px;
+  border-radius: 50px;
+  border: 3px solid #93b1a6;
 }
 .Language {
   margin-right: 20px;
@@ -62,16 +84,16 @@
   border-radius: 5px;
 }
 #search {
-  border: 2px solid #f99417;
+  border: 2px solid #5c8374;
   text-align: center;
 }
 #icon {
-  color: #f99417;
-  background-color: #363062;
+  color: #fff;
+  background-color: #5c8374;
   position: absolute;
   /* margin-left: 2px; */
   height: 35px;
-  border: 2px solid #f99417;
+  border: 1px solid #5c8374;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 
@@ -86,5 +108,4 @@
   background-color: #363062 !important;
   color: white !important;
   font-size: 1.2em !important;
- 
 }

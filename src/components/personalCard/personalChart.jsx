@@ -56,8 +56,8 @@ const ChartCard = () => {
 
       // تنظیم رنگ ناحیه زیر نمودار با رنگ خط نمودار
       const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, 'rgba(255, 167, 35, 1)');
-      gradient.addColorStop(1, 'rgba(255, 167, 35, 0)');
+      gradient.addColorStop(0, 'rgba(92, 131, 116 , 1)');
+      gradient.addColorStop(1, 'rgba(92, 131, 116 , 0)');
       context.fillStyle = gradient;
 
       // رسم مستطیل به عنوان ناحیه زیر نمودار

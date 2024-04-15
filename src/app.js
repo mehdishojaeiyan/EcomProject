@@ -14,6 +14,7 @@ import TopPerforming from "./pages/topPerforming/topPerforming";
 import Community from "./pages/community/community";
 import Login from "./pages/login/login"
 import Market from "./pages/market/market";
+import Pricing from "./components/pricing/pricing";
 import DigiCoin from "./components/digicoin/digiCoin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/home/home";
@@ -709,7 +710,7 @@ class App extends Component {
       <>
         <LeaderContext.Provider value={{ leader: this.state.leader }}>
           <NavBar />
-
+      
           <Routes>
             <Route path="/leader/:id" element={<Leader />}></Route>
             <Route path="/watchList/:id" element={<WatchList />}></Route>
@@ -720,6 +721,7 @@ class App extends Component {
             <Route path="/watchList" element={<WatchList />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/market" element={<Market />}></Route>
+            <Route path="/pricing" element={<Pricing />}></Route>
             <Route path="/digiCoin" element={<DigiCoin />}></Route>
             <Route path="/forexExchengeRates" element={<AllForex />}></Route>
             <Route path="/blog" element={<Blog />}></Route>

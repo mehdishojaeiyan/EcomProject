@@ -1,10 +1,7 @@
 * {
   box-sizing: border-box;
 }
-/* .overViewBigBox{
-    display: flex;
-    flex-wrap: wrap;
-} */
+
 .viwePerform {
   display: flex;
   flex-wrap: wrap;

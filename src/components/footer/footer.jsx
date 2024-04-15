@@ -5,18 +5,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return ( <>
-      {/* <div className="alaki">
-        
-      </div> */}
+      
       <footer id="footer-main">
         <div className="footer-grid">
         
               <section className="footer-1 footerA">
                 <h4 id="EcomFooter">Ecom</h4>
-                  {/* <p>Our Service a</p>
-                  <p>Our Service b</p>
-                  <p>Our Service c</p>
-                  <p>Our Service d</p> */}
+                 
               </section>
 
             <section className="footer-2 footerA">
@@ -24,7 +19,7 @@ const Footer = () => {
                   <div><a href="#">Policy Privacy</a></div>
                   <div><a href="#">Terms Of Service</a></div>
                   <div><a href="#">Lorem</a></div>
-                  {/* <div><a href="#">Our Service a</a></div> */}
+                
               </section>
 
             <section className="footer-3 footerA">

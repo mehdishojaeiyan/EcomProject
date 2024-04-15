@@ -13,7 +13,7 @@ import { Icon } from "semantic-ui-react";
 function NavBar() {
   return (
     <Navbar expand="lg" className=" menu">
-      <Container fluid>
+      <Container fluid className="navContainer">
         <div
           id="ecom"
           className="animate__animated animate__flip "
@@ -44,7 +44,7 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item href="login">Simulation</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="login">
+              <NavDropdown.Item href="/pricing">
                 Pricing
               </NavDropdown.Item>
             </NavDropdown>
@@ -84,8 +84,8 @@ function NavBar() {
             فارسی
           </NavDropdown.Item>
         </NavDropdown>
-       <Nav.Link href='/login'><button className="login">Sgin up</button></Nav.Link> 
-       <Nav.Link href='/login'><button className="login">Login</button></Nav.Link> 
+       <Nav.Link href='/login'><button className="signUpBtn mr-5">Sgin up</button></Nav.Link> 
+       <Nav.Link href='/login'><button className="loginBtn">Login</button></Nav.Link> 
         
         {/* <MyApp/> */}
       </Container>
